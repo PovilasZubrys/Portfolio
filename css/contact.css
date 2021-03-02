@@ -30,3 +30,14 @@ textarea {
     background-color: #F5F5F5;
     border-radius: 5px;
 }
+@media (max-width: 990px) {
+    form {
+        width: 60%;
+    }
+}
+
+@media (max-width: 990px) {
+    form {
+        width: 100%;
+    }
+}

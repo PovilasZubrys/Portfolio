@@ -1,3 +1,11 @@
+<?php 
+session_start();
+$img = $_SESSION['image'];
+$desc = $_SESSION['description'];
+if (isset($_SESSION['id'])) {
+    unset($_SESSION['id']);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,15 +26,15 @@
 <body>
     <header>
         <nav class="menu">
-            <a href="#">Home</a>
-            <a href="#">About me</a>
-            <a href="#">Projects</a>
-            <a href="#">Links</a>
+            <a href="">Home</a>
+            <a href="#about">About me</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
     <main>
         <!-- About -->
-        <div class="container hidden about">
+        <div class="container hidden about" id="#about">
             <div class="row">
                 <div class="col-12 title">
                     <h1>About</h1>
@@ -36,13 +44,13 @@
                 </div>
                 <div class="col-4">
                     <div class="image">
-                        <img id="profile" src="img/profile.jpg" alt="profile">
+                        <img id="profile" src="img/profile/<?= $img ?>" alt="profile">
                     </div>
                 </div>
                 <div class="col-8">
                     <div class="description">
                         <p>
-                            mano kietas aprašymas 
+                            <?= $desc ?>
                         </p>
                     </div>
                 </div>
@@ -54,7 +62,7 @@
             </div>
         </div>
         <!-- Projects -->
-        <div class="container hidden projects">
+        <div class="container hidden projects" id="projects">
             <div class="row">
                 <div class="col-12 title">
                     <h1>My Projects</h1>
@@ -74,7 +82,7 @@
             </div>
         </div>
         <!-- Contact form -->
-        <div class="container hidden contact-form">
+        <div class="container hidden contact-form" id="#contact">
             <div class="row">
                 <div class="col-12 title">
                     <h1>Contact me</h1>
