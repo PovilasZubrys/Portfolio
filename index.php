@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/myprojects.css">
     <link rel="stylesheet" href="./css/menu.css">
     <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="./css/button.css">
     <link rel="stylesheet" href="./css/footer.css">
     <script src="https://kit.fontawesome.com/4acf51a376.js" crossorigin="anonymous"></script>
     <title>Povilas Zubrys</title>
@@ -89,7 +90,7 @@
                         <input placeholder="Name" type="text">
                         <label for="">Message</label>
                         <textarea placeholder="Message" name="" id="" cols="30" rows="10"></textarea>
-                        <button>Send!</button>
+                        <button class="submit-button">Send!</button>
                     </form>
                 </div>
             </div>
