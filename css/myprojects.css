@@ -1,0 +1,11 @@
+.projects {
+    background-color: #F5F5F5;
+}
+
+.projects > .row > .col-12 > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    clip-path: circle();
+}
