@@ -1,3 +1,17 @@
+<?php
+include('../php/class/Dbh.php');
+include('../php/class/Login.php');
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($_POST['username'] && $_POST['password']) {
+
+        $password = $_POST['password'];
+        $username = $_POST['username'];
+        $connect = new Login;
+        $connect->login($username, $password);
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +29,7 @@
         <div class="row">
             <div class="col-12 form">
                 <h1>Admin Panel login</h1>
-                <form action="../php/login.php" method="POST">
+                <form action="" method="POST">
 
                     <label>Username</label>
                     <input type="text" name="username">

@@ -1,7 +1,13 @@
-<?php 
+<?php
 session_start();
-$img = $_SESSION['image'];
-$desc = $_SESSION['description'];
+include('php/class/ReadDb.php');
+
+$read = new Read;
+$data = $read->read();
+
+$description = $data[0]['description'];
+$profilePicture = $data[0]['profile_picture'];
+
 if (isset($_SESSION['id'])) {
     unset($_SESSION['id']);
 }
@@ -34,7 +40,7 @@ if (isset($_SESSION['id'])) {
     </header>
     <main>
         <!-- About -->
-        <div class="container hidden about" id="#about">
+        <div class="container hidden about" id="about">
             <div class="row">
                 <div class="col-12 title">
                     <h1>About</h1>
@@ -44,13 +50,13 @@ if (isset($_SESSION['id'])) {
                 </div>
                 <div class="col-4">
                     <div class="image">
-                        <img id="profile" src="img/profile/<?= $img ?>" alt="profile">
+                        <img id="profile" src="img/profile/<?= $profilePicture ?>" alt="profile">
                     </div>
                 </div>
                 <div class="col-8">
                     <div class="description">
                         <p>
-                            <?= $desc ?>
+                            <?= $description ?>
                         </p>
                     </div>
                 </div>
@@ -82,7 +88,7 @@ if (isset($_SESSION['id'])) {
             </div>
         </div>
         <!-- Contact form -->
-        <div class="container hidden contact-form" id="#contact">
+        <div class="container hidden contact-form" id="contact">
             <div class="row">
                 <div class="col-12 title">
                     <h1>Contact me</h1>
