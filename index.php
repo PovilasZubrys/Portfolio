@@ -118,6 +118,10 @@ if (isset($_SESSION['id'])) {
                     <div class="col-12 headline">
                         <h2>Links</h2>
                     </div>
+                    <a href="" class="fab">Home</a>
+                    <a href="#about" class="fab">About me</a>
+                    <a href="#projects" class="fab">Projects</a>
+                    <a href="#contact" class="fab">Contact</a>
                 </div>
                 <div class="col-6 socials">
                     <div class="col-12 headline">
