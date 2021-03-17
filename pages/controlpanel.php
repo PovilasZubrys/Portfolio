@@ -1,12 +1,13 @@
 <?php
-session_start();
-if (isset($_SESSION['message'])) {
-    $message = $_SESSION['message'];
-};
-unset($_SESSION['message']);
+include('../php/class/Dbh.php');
+include('../php/class/UpdateDb.php');
 
-if(!isset($_SESSION['id'])){
-    die(header("location: ../index.php"));
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if(isset($_POST['description'])) {
+
+        $update = new Update;
+        $update->updateDescription($_POST['description']);
+    }
 }
 ?>
 
@@ -52,7 +53,7 @@ if(!isset($_SESSION['id'])){
                 </div>
                 <div class="col-12 block">
                     <h2>Update description: </h2>
-                    <form method="POST" enctype="multipart/form-data" action="../php/description.php">
+                    <form method="POST" enctype="multipart/form-data" action="">
         
                         <label>Description: </label>
                         <textarea class="description" name="description"></textarea>
