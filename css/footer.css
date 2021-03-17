@@ -19,7 +19,14 @@
     font-size: 20px;
     margin-right: 5px;
 }
+.footer > .row > .links > a,
+.footer > .row > .links > a > .fab {
+    display: block;
+}
+
 .footer > .row > .socials > a,
+.footer > .row > .links > a,
+.footer > .row > .links > a > .fab,
 .footer > .row > .socials > a > .fab {
     color: white;
     text-decoration: none;

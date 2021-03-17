@@ -1,12 +1,28 @@
 <?php
+session_start();
 include('../php/class/Dbh.php');
 include('../php/class/UpdateDb.php');
+include('../php/class/Signup.php');
 
+// DESCRIPTION UPDATE
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if(isset($_POST['description'])) {
 
         $update = new Update;
         $update->updateDescription($_POST['description']);
+
+        header('Location: http://localhost/portfolio/pages/controlpanel.php');
+    }
+}
+// NEW USER REGISTRATION
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($_POST['username'] && $_POST['password']) {
+        
+        $password = $_POST['password'];
+        $username = $_POST['username'];
+        $connect = new Signup;
+        $connect->signup($username, $password);
+        header('Location: http://localhost/portfolio/pages/controlpanel.php');
     }
 }
 ?>
@@ -27,18 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
     <header>
-        
+        <div>
+            Admin Control Panel
+        </div>    
     </header>
     <main>
-        <div class="container">
-            <div class="row">
-                <?php if (isset($message)): ?>
-                    <div class="message col-12">
-                        <?= $message ?>
-                    </div>
-                <?php endif; ?>
-            </div>
-        </div>
         <div class="container">
             <div class="row">
                 <div class="col-12 block">
@@ -71,6 +80,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <input name="password2" placeholder="repeat new password" type="text">
 
                         <button type="submit" class="submit-button">Update!</button>
+                    </form>
+                </div>
+                <div class="col-12 block">
+                    <h2>New user:</h2>
+                    <form action="" method="POST">
+                        <input type="text" name="username">
+            
+                        <input type="password" name="password">
+                        <button class="submit-button">Register</button>
                     </form>
                 </div>
             </div>
