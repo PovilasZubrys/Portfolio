@@ -3,9 +3,9 @@
 class Dbh {
 
     private $db_server = "localhost";
-    private $db_username = "root";
-    private $db_password = "";
-    private $db_database = "portfolio";
+    private $db_username = "u708906375_u708906375";
+    private $db_password = "wK3xyqHq8N&#";
+    private $db_database = "u708906375_portfolio";
     
     protected function connect() {
         $dsn = "mysql:host=$this->db_server; dbname=$this->db_database";
