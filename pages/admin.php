@@ -3,12 +3,12 @@ include('../php/class/Dbh.php');
 include('../php/class/Login.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if ($_POST['username'] && $_POST['password']) {
+    if ($_POST['email'] && $_POST['password']) {
 
         $password = $_POST['password'];
-        $username = $_POST['username'];
+        $email = $_POST['email'];
         $connect = new Login;
-        $connect->loginCP($username, $password);
+        $connect->loginCP($email, $password);
     }
 }
 ?>
@@ -31,11 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <h1>Admin Panel login</h1>
                 <form action="" method="POST">
 
-                    <label>Username</label>
-                    <input type="text" name="username">
+                    <label>Email:</label>
+                    <input type="text" name="email" placeholder="Your Email here">
 
                     <label>Password</label>
-                    <input type="password" name="password">
+                    <input type="password" name="password" placeholder="Password">
                     <button class="submit-button">Log In</button>
                     
                 </form>
