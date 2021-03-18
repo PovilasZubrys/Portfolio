@@ -3,7 +3,7 @@ session_start();
 include('php/class/ReadDb.php');
 
 $read = new Read;
-$data = $read->read();
+$data = $read->readDb();
 
 $description = $data[0]['description'];
 $profilePicture = $data[0]['profile_picture'];
@@ -97,11 +97,11 @@ if (isset($_SESSION['id'])) {
                     <h1>Contact me through email</h1>
                 </div>
                 <div class="col-12 form">
-                    <form action="">
+                    <form action="mailto:povilaszubrys@gmail.com">
                         <label for="">Email</label>
-                        <input placeholder="Email" type="text">
+                        <input placeholder="Email" name="mail" type="text">
                         <label for="">Name</label>
-                        <input placeholder="Name" type="text">
+                        <input placeholder="Name" name="name" type="text">
                         <label for="">Message</label>
                         <textarea placeholder="Message" name="" id="" cols="30" rows="10"></textarea>
                         <button class="submit-button">Send!</button>

@@ -7,7 +7,7 @@ class Update extends Dbh {
                                 WHERE id = 1');
 
         $stmt->execute(['description' => $description]);
-        header('Location: http://localhost/portfolio/pages/controlpanel.php');
+        header('Location: https://povilaszubrys.lt/pages/controlpanel.php');
     }
 
     public function updateProfile($fileName) {
@@ -16,20 +16,19 @@ class Update extends Dbh {
                                             WHERE id = 1');
 
         $stmt->execute(['fileName' => $fileName]);
-        header('Location: http://localhost/portfolio/pages/controlpanel.php');
+        header('Location: https://povilaszubrys.lt/pages/controlpanel.php');
     }
 
-    public function updatePassword($password1, $password2) {
+    public function updatePassword($password1, $password2, $id) {
         if ($password1 == $password2) {
-            $pdo = new PDO("mysql:host=$db_server;dbname=$db_database", $db_username, $db_password);
-            
+
             $encrypted_password = password_hash($password1, PASSWORD_DEFAULT);
             
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->connect()->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
             $sql = "UPDATE `user` SET `password` = :password WHERE id = :id";
 
-            $statement = $pdo->prepare($sql);
+            $statement = $this->connect()->prepare($sql);
 
             //Bind our value to the parameter :id.
             $statement->bindValue(':id', $id);
@@ -40,7 +39,7 @@ class Update extends Dbh {
             //Execute our UPDATE statement.
             $statement->execute();
 
-            header('Location: http://localhost/portfolio/pages/controlpanel.php');
+            header('Location: https://povilaszubrys.lt/pages/controlpanel.php');
         }
     }
 }
