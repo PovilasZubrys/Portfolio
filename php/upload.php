@@ -25,7 +25,7 @@ include ('../php/class/UpdateDb.php');
         $connect->updateProfile($file_name);
         move_uploaded_file($file_tmp,"../img/profile/".$file_name);
         $_SESSION['message'] = 'Successfully uploaded profile picture!';
-        header('Location: http://localhost/portfolio/pages/controlpanel.php');
+        header('Location: https://povilaszubrys.lt/pages/controlpanel.php');
       }else{
         print_r($errors);
       }

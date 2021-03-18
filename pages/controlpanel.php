@@ -1,8 +1,15 @@
 <?php
 session_start();
-include('../php/class/Dbh.php');
+
+include('../php/class/ReadDb.php');
 include('../php/class/UpdateDb.php');
 include('../php/class/Signup.php');
+
+$userId = $_SESSION['id'];
+
+if (!isset($userId)) {
+    header('Location: https://povilaszubrys.lt/');
+}
 
 // DESCRIPTION UPDATE
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -11,18 +18,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $update = new Update;
         $update->updateDescription($_POST['description']);
 
-        header('Location: http://localhost/portfolio/pages/controlpanel.php');
+        header('Location: https://povilaszubrys.lt/pages/controlpanel.php');
     }
 }
 // NEW USER REGISTRATION
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if ($_POST['username'] && $_POST['password']) {
+    if ($_POST['username'] && $_POST['password1'] && $_POST['password2'] && $_POST['name'] && $_POST['surname'] && $_POST['email']) {
         
-        $password = $_POST['password'];
         $username = $_POST['username'];
-        $connect = new Signup;
-        $connect->signup($username, $password);
-        header('Location: http://localhost/portfolio/pages/controlpanel.php');
+        $name = $_POST['name'];
+        $surname = $_POST['surname'];
+        $email = $_POST['email'];
+        $password1 = $_POST['password1'];
+        $password2 = $_POST['password2'];
+
+        if ($password1 === $password2) {
+
+            $connect = new Signup;
+            $connect->signupNew($username, $name, $surname, $email, $password1);
+
+            header('Location: https://povilaszubrys.lt/pages/controlpanel.php');
+        }
+    }
+}
+// CHANGE PASSWORD
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($_POST['newPassword1'] === $_POST['newPassword1']) {
+        $newPassword1 = $_POST['newPassword1'];
+        $newPassword2 = $_POST['newPassword2'];
+
+        $updatePass = new Update;
+        $updatePass->updatePassword($newPassword1, $newPassword2, $userId);
+    }
+}
+// READ DATABASE
+$read = new Read;
+$data = $read->readUsers();
+foreach($data as $key) {
+    if ($key['id'] === $userId) {
+        $userName = $key['name'];
+        $userSurname = $key['surname'];
     }
 }
 ?>
@@ -43,14 +78,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
     <header>
-        <div>
-            Admin Control Panel
-        </div>    
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Admin Control Panel</h1>
+                    <p>Hey there, <?= $userName ?>!</p>
+                </div>
+            </div>
+        </div>
     </header>
     <main>
         <div class="container">
             <div class="row">
                 <div class="col-12 block">
+                <!-- Update profile picture -->
                     <h2>New profile picture</h2>
                     <form method="POST" enctype="multipart/form-data" action="../php/upload.php">
 
@@ -60,6 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     </form>
                 </div>
+                <!-- Update description -->
                 <div class="col-12 block">
                     <h2>Update description: </h2>
                     <form method="POST" enctype="multipart/form-data" action="">
@@ -70,24 +112,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <button type="submit" class="submit-button">Update!</button>
                     </form>
                 </div>
+                <!-- Update password -->
                 <div class="col-12 block">
-                    <h2>Change admin password: </h2>
-                    <form method="POST" enctype="multipart/form-data" action="../php/updatepass.php">
+                    <h2>Change password: </h2>
+                    <form method="POST" enctype="multipart/form-data" action="">
         
-                        <label>Change password: </label>
+                        <label>Change your password: </label>
 
-                        <input name="password1" placeholder="new password" type="text">
-                        <input name="password2" placeholder="repeat new password" type="text">
+                        <input name="newPassword1" placeholder="new password" type="text">
+                        <input name="newPassword2" placeholder="repeat new password" type="text">
 
                         <button type="submit" class="submit-button">Update!</button>
                     </form>
                 </div>
+                <!-- Create new user -->
                 <div class="col-12 block">
                     <h2>New user:</h2>
                     <form action="" method="POST">
+
+                        <label>Username:</label>
                         <input type="text" name="username">
-            
-                        <input type="password" name="password">
+                        
+                        <label>Name:</label>
+                        <input type="text" name="name">
+
+                        <label>Surname:</label>
+                        <input type="text" name="surname">
+
+                        <label>Email:</label>
+                        <input type="text"  name="email">
+
+                        <label>Password:</label>
+                        <input type="password" name="password1">
+
+                        <label>Repeat password:</label>
+                        <input type="password" name="password2">
+
                         <button class="submit-button">Register</button>
                     </form>
                 </div>
