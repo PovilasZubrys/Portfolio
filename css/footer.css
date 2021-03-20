@@ -19,18 +19,19 @@
     font-size: 20px;
     margin-right: 5px;
 }
-.footer > .row > .links > a,
-.footer > .row > .links > a > .fab {
+.footer > .row > .links > a {
     display: block;
+    font-size: 15px;
+    font-weight: 200;
 }
 
 .footer > .row > .socials > a,
 .footer > .row > .links > a,
-.footer > .row > .links > a > .fab,
 .footer > .row > .socials > a > .fab {
     color: white;
     text-decoration: none;
     vertical-align: middle;
+    width: fit-content;
 }
 .line {
     opacity: 0.2;
