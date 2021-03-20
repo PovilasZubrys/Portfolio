@@ -48,23 +48,23 @@ if (isset($_SESSION['id'])) {
                 <div class="col-12 headline">
                     <h1>First, let me introduce myself!</h1>
                 </div>
-                <div class="col-4">
+                <div class="col-4 col-md-12 imgContainer">
                     <div class="image">
                         <img id="profile" src="img/profile/<?= $profilePicture ?>" alt="profile">
                     </div>
                 </div>
-                <div class="col-8">
+                <div class="col-8 col-md-12">
                     <div class="description">
                         <p>
                             <?= $description ?>
                         </p>
                     </div>
                 </div>
-                <div class="socials col-4">
+                <div class="socials col-4 col-md-12">
                     <a href="https://www.instagram.com/povilaszubrys/" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="https://github.com/PovilasZubrys" target="_blank"><i class="fab fa-github-square"></i></a>
                     <a href="https://www.linkedin.com/in/povilas-zubrys-3315161b9/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </div>
+                </div>                
             </div>
         </div>
         <!-- Projects -->
@@ -114,16 +114,16 @@ if (isset($_SESSION['id'])) {
         <!-- footer -->
         <div class="container footer">
             <div class="row">
-                <div class="col-6 links">
+                <div class="col-6 col-md-12 links">
                     <div class="col-12 headline">
                         <h2>Links</h2>
                     </div>
-                    <a href="" class="fab">Home</a>
-                    <a href="#about" class="fab">About me</a>
-                    <a href="#projects" class="fab">Projects</a>
-                    <a href="#contact" class="fab">Contact</a>
+                    <a href="">Home</a>
+                    <a href="#about">About me</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
                 </div>
-                <div class="col-6 socials">
+                <div class="col-6 col-md-12 socials">
                     <div class="col-12 headline">
                         <h2>Socials</h2>
                     </div>
