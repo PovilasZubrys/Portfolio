@@ -26,6 +26,9 @@ if (isset($_SESSION['id'])) {
     <link rel="stylesheet" href="./css/contact.css">
     <link rel="stylesheet" href="./css/button.css">
     <link rel="stylesheet" href="./css/footer.css">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="./img/favicon.svg" />
     <script src="https://kit.fontawesome.com/4acf51a376.js" crossorigin="anonymous"></script>
     <title>Povilas Zubrys</title>
 </head>
