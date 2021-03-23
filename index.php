@@ -12,7 +12,6 @@ $profilePicture = $data[0]['profile_picture'];
 if (isset($_SESSION['id'])) {
     unset($_SESSION['id']);
 }
-_d($_SESSION['message']);
 // MAIL STUFF
 // if the url field is empty
 if(isset($_POST['url']) && $_POST['url'] == '') {
