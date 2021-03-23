@@ -100,13 +100,16 @@ if (isset($_SESSION['id'])) {
                     <h1>Contact me through email</h1>
                 </div>
                 <div class="col-12 form">
-                    <form action="mailto:povilaszubrys@gmail.com">
+                    <form action="./php/submit.php" method="POST">
+
                         <label for="">Email</label>
-                        <input placeholder="Email" name="mail" type="text">
+                        <input placeholder="Email" name="email" type="text">
                         <label for="">Name</label>
                         <input placeholder="Name" name="name" type="text">
                         <label for="">Message</label>
-                        <textarea placeholder="Message" name="" id="" cols="30" rows="10"></textarea>
+                        <textarea placeholder="Message" name="message" id="" cols="30" rows="10"></textarea>
+                        <p class="antispam">Leave this empty: <input type="text" name="url" /></p>
+
                         <button class="submit-button">Send!</button>
                     </form>
                 </div>
