@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class Mail {
     public function sendMail($sendersName, $sendersEmail, $sendersMessage) {    
 
@@ -24,5 +24,9 @@ class Mail {
 
         // finally, send the message     
         mail($youremail, 'Contact Form', $body, $headers );
+        $_SESSION['message'] = 'Email sent succesfully. I will contact you soon!';
+        
+        header('Location: https://povilaszubrys.lt');
+        exit();
     }
 }
