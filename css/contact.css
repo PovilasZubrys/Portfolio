@@ -30,6 +30,9 @@ textarea {
     background-color: #F5F5F5;
     border-radius: 5px;
 }
+.antispam {
+    display: none;
+}
 @media (max-width: 990px) {
     form {
         width: 60%;
