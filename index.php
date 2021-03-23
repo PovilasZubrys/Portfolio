@@ -39,6 +39,9 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
     <link rel="stylesheet" href="./css/button.css">
     <link rel="stylesheet" href="./css/footer.css">
 
+    <!-- APP.js -->
+    <script src="./js/app.js" defer></script>
+
     <!-- favicon -->
     <link rel="icon" type="image/png" href="./img/favicon.svg" />
     <script src="https://kit.fontawesome.com/4acf51a376.js" crossorigin="anonymous"></script>
@@ -114,12 +117,12 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
                 <div class="col-12 form">
                     <form action="" method="POST">
 
-                        <label for="">Email</label>
+                        <label>Email</label>
                         <input placeholder="Email" name="email" type="text">
-                        <label for="">Name</label>
+                        <label>Name</label>
                         <input placeholder="Name" name="name" type="text">
-                        <label for="">Message</label>
-                        <textarea placeholder="Message" name="message" id="" cols="30" rows="10"></textarea>
+                        <label>Message</label>
+                        <textarea placeholder="Message" name="message" cols="30" rows="10"></textarea>
                         <p class="antispam">Leave this empty: <input type="text" name="url" /></p>
 
                         <button class="submit-button">Send!</button>
