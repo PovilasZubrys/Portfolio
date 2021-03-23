@@ -113,7 +113,7 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
                     <h1>Contact me through email</h1>
                 </div>
                 <div class="col-12 form">
-                    <form action="./php/submit.php" method="POST">
+                    <form action="" method="POST">
 
                         <label for="">Email</label>
                         <input placeholder="Email" name="email" type="text">
