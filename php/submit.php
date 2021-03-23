@@ -1,6 +1,4 @@
 <?php 
-// if the url field is empty 
-if(isset($_POST['url']) && $_POST['url'] == ''){
 
      // put your email address here     
      $youremail = 'info@povilaszubrys.lt';
