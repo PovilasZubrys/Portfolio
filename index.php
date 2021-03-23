@@ -21,7 +21,7 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
     $sendersMessage = $_POST['message'];
 
     $send = new Mail;
-    $send->sendEmail($sendersName, $sendersEmail, $sendersMessage);
+    $send->sendMail($sendersName, $sendersEmail, $sendersMessage);
 } // otherwise, let the spammer think that they got their message through
 
 ?>
