@@ -16,9 +16,9 @@ if (isset($_SESSION['id'])) {
 // MAIL STUFF
 // if the url field is empty
 if(isset($_POST['url']) && $_POST['url'] == '') {
-    $_POST['name'] = $sendersName;
-    $_POST['email'] = $sendersEmail;
-    $_POST['message'] = $sendersMessage;
+    $sendersName = $_POST['name'];
+    $sendersEmail = $_POST['email'];
+    $sendersMessage = $_POST['message'];
 
     $send = new Mail;
     $send->sendEmail($sendersName, $sendersEmail, $sendersMessage);
