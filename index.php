@@ -40,7 +40,7 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
     <link rel="stylesheet" href="./css/footer.css">
 
     <!-- APP.js -->
-    <script src="./js/app.js" defer></script>
+    <script type="module" src="./js/app.js" defer></script>
 
     <!-- favicon -->
     <link rel="icon" type="image/png" href="./img/favicon.svg" />
@@ -114,15 +114,17 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
                 <div class="col-12 headline">
                     <h1>Contact me through email</h1>
                 </div>
+                <div class="col-12" id="notice">
+                </div>
                 <div class="col-12 form">
-                    <form action="" method="POST">
+                    <form name="contact" method="POST" onsubmit="return formValidate()">
 
                         <label>Email</label>
-                        <input placeholder="Email" name="email" type="text">
+                        <input placeholder="Email" id="email" name="email" type="text">
                         <label>Name</label>
-                        <input placeholder="Name" name="name" type="text">
+                        <input placeholder="Name" name="name" name="name" type="text">
                         <label>Message</label>
-                        <textarea placeholder="Message" name="message" cols="30" rows="10"></textarea>
+                        <textarea placeholder="Message" name="message" name="message" cols="30" rows="10"></textarea>
                         <p class="antispam">Leave this empty: <input type="text" name="url" /></p>
 
                         <button class="submit-button">Send!</button>
@@ -159,4 +161,5 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
 </body>
 <script src="./js/box.js"></script>
 <script src="./js/easteregg.js"></script>
+<script src="./js/validate.js"></script>
 </html>
