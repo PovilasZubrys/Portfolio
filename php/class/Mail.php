@@ -1,7 +1,7 @@
 <?php
 
 class Mail {
-    protected function sendMail($sendersName, $sendersEmail, $sendersMessage) {    
+    public function sendMail($sendersName, $sendersEmail, $sendersMessage) {    
 
         // put your email address here     
         $youremail = 'info@povilaszubrys.lt';
