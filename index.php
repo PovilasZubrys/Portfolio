@@ -80,7 +80,7 @@ if (isset($_SESSION['id'])) {
                     <h1>My project gallery</h1>
                 </div>
                 <div class="col-12">
-                    <img src="./img/empty.gif" alt="">
+                    <img src="./img/error/notfound.gif" alt="">
                 </div>
                 <p class="col-12 title">
                     Oh no! It's so empty in here!
