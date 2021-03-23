@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('php/class/ReadDb.php');
+include('php/class/Mail.php');
 
 $read = new Read;
 $data = $read->readDb();
@@ -11,6 +12,18 @@ $profilePicture = $data[0]['profile_picture'];
 if (isset($_SESSION['id'])) {
     unset($_SESSION['id']);
 }
+
+// MAIL STUFF
+// if the url field is empty
+if(isset($_POST['url']) && $_POST['url'] == '') {
+    $_POST['name'] = $sendersName;
+    $_POST['email'] = $sendersEmail;
+    $_POST['message'] = $sendersMessage;
+
+    $send = new Mail;
+    $send->sendEmail($sendersName, $sendersEmail, $sendersMessage);
+} // otherwise, let the spammer think that they got their message through
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,7 +113,7 @@ if (isset($_SESSION['id'])) {
                     <h1>Contact me through email</h1>
                 </div>
                 <div class="col-12 form">
-                    <form action="./php/submit.php" method="POST">
+                    <form action="" method="POST">
 
                         <label for="">Email</label>
                         <input placeholder="Email" name="email" type="text">
