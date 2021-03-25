@@ -3,11 +3,13 @@ session_start();
 include('php/class/ReadDb.php');
 include('php/class/Mail.php');
 include('php/class/Validate.php');
-(!isset($_SESSION['messageSuccess'])) ? $_SESSION['messageSuccess'] = '' : '';
-(!isset($_SESSION['messageError'])) ? $_SESSION['messageError'] = '' : '';
 
-$messageSuccess = $_SESSION['messageSuccess'];
-$messageError = $_SESSION['messageError'];
+if (isset($_SESSION['message']['success'])) {
+    $messageSuccess = $_SESSION['message']['success'];
+}
+if (isset($_SESSION['message']['error'])) {
+    $messageError = $_SESSION['message']['error'];
+}
 
 $read = new Read;
 $data = $read->readDb();
@@ -27,16 +29,19 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
     
     $validate = new Validate;
     $result = $validate->validateContact($sendersName, $sendersEmail, $sendersMessage);
-    
-    if ($result === true) {
 
+    if ($result === true) {
         $send = new Mail;
         $send->sendMail($sendersName, $sendersEmail, $sendersMessage);
-
     } else {
-        $message = 'Oops, something went wrong.';
+        $messageError = 'Oops, something went wrong. :(';
     }
 } // otherwise, let the spammer think that they got their message through
+
+_d($messageError);
+_d($messageSuccess);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
