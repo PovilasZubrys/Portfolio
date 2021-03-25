@@ -1,5 +1,5 @@
 <?php
-// session_start();
+
 class Mail {
     public function sendMail($sendersName, $sendersEmail, $sendersMessage) {    
 
@@ -7,7 +7,7 @@ class Mail {
         $youremail = 'info@povilaszubrys.lt';
 
         // prepare a "pretty" version of the message
-        $body = "This is the form that was just submitted:     
+        $body = "You have just received an email:    
                     Name:  $sendersName
                     E-Mail: $sendersEmail
                     Message: $sendersMessage"; 
@@ -24,7 +24,7 @@ class Mail {
 
         // finally, send the message     
         mail($youremail, 'Contact Form', $body, $headers );
-        $_SESSION['message'] = 'Email sent succesfully. I will contact you soon!';
+        $_SESSION['messageSuccess'] = 'Email was sent succesfully. I will contact you soon!';
         
         header('Location: https://povilaszubrys.lt');
         exit();
