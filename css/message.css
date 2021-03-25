@@ -1,0 +1,63 @@
+.messageSuccess {
+    width: 100%;
+    text-align: center;
+    background-color: greenyellow;
+    line-height: 35px;
+    font-size: 15px;
+    position: absolute;
+    animation: messageSuccess ease-in 3s forwards;
+}
+@keyframes messageSuccess {
+    0% {
+        line-height: 0px;
+        font-size: 0px;
+        opacity: 1;
+    }
+    25% {
+        line-height: 35px;
+        font-size: 15px;
+        opacity: 1;
+    }
+    75% {
+        line-height: 35px;
+        font-size: 15px;
+        opacity: 1;
+    }
+    100% {
+        line-height: 0px;
+        font-size: 0px;
+        opacity: 0;
+    }
+}
+
+.messageError {
+    width: 100%;
+    text-align: center;
+    background-color: red;
+    line-height: 35px;
+    font-size: 15px;
+    position: absolute;
+    animation: messageError ease-in 3s forwards;
+}
+@keyframes messageError {
+    0% {
+        line-height: 0px;
+        font-size: 0px;
+        opacity: 1;
+    }
+    25% {
+        line-height: 35px;
+        font-size: 15px;
+        opacity: 1;
+    }
+    75% {
+        line-height: 35px;
+        font-size: 15px;
+        opacity: 1;
+    }
+    100% {
+        line-height: 0px;
+        font-size: 0px;
+        opacity: 0;
+    }
+}
