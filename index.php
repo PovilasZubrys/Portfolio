@@ -79,7 +79,7 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
             <?php unset($_SESSION['message']); ?>
         </div>
     <?php elseif(isset($messageError)): ?>
-        <div class="messageSuccess">
+        <div class="messageError">
             <?php unset($_SESSION['message']); ?>
             <?= $messageError ?>
         </div>
