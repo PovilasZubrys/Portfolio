@@ -24,9 +24,9 @@ class Mail {
 
         // finally, send the message     
         mail($youremail, 'Contact Form', $body, $headers );
-        $_SESSION['messageSuccess'] = 'Email was sent succesfully. I will contact you soon!';
+        $_SESSION['message']['success'] = 'Email was sent succesfully. I will contact you soon!';
         
-        header('Location: https://povilaszubrys.lt');
+        header('Location: http://localhost/portfolio/');
         exit();
     }
 }
