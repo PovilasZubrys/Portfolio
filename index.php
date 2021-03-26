@@ -38,10 +38,6 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
     }
 } // otherwise, let the spammer think that they got their message through
 
-_d($messageError);
-_d($messageSuccess);
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,22 +70,20 @@ _d($messageSuccess);
             <a href="#about">About me</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
-            <?php if (isset($messageSuccess)): ?>
-                <div class="messageSuccess">
-                    <?= $messageSuccess ?>
-                    <?php unset($messageSuccess); ?>
-                </div>
-            <?php elseif(isset($messageError)): ?>
-                <div class="messageError">
-                    <?= $messageError ?>
-                    <?php unset($messageError); ?>
-                </div>
-            <?php endif ?>
         </nav>
     </header>
     <main>
-
-
+    <?php if (isset($messageSuccess)): ?>
+        <div class="messageSuccess">
+            <?= $messageSuccess ?>
+            <?php unset($_SESSION['message']); ?>
+        </div>
+    <?php elseif(isset($messageError)): ?>
+        <div class="messageSuccess">
+            <?php unset($_SESSION['message']); ?>
+            <?= $messageError ?>
+        </div>
+    <?php endif ?>
         <!-- About -->
         <div class="container hidden about" id="about">
             <div class="row">
