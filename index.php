@@ -147,11 +147,11 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
                     <form name="contact" method="POST" onsubmit="return formValidate()">
 
                         <label>Email</label>
-                        <input placeholder="Email" id="email" name="email" type="text">
+                        <input placeholder="Email" id="email" name="email" type="text" required>
                         <label>Name</label>
-                        <input placeholder="Name" name="name" name="name" type="text">
+                        <input placeholder="Name" name="name" name="name" type="text" required>
                         <label>Message</label>
-                        <textarea placeholder="Message" name="message" name="message" cols="30" rows="10"></textarea>
+                        <textarea placeholder="Message" name="message" name="message" cols="30" rows="10" required></textarea>
                         <p class="antispam">Leave this empty: <input type="text" name="url" /></p>
 
                         <button class="submit-button">Send!</button>
