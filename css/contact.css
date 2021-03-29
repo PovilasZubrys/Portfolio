@@ -1,3 +1,17 @@
+.contactMessage {
+    display: block;
+    color: white;
+    text-align: center;
+    background-color: red;
+    border-radius: 5px;
+    height: 35px;
+    line-height: 35px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 form {
     width: 40%;
     margin: auto;

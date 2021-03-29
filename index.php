@@ -2,6 +2,14 @@
 session_start();
 include('php/class/ReadDb.php');
 include('php/class/Mail.php');
+include('php/class/Validate.php');
+
+if (isset($_SESSION['message']['success'])) {
+    $messageSuccess = $_SESSION['message']['success'];
+}
+if (isset($_SESSION['message']['error'])) {
+    $messageError = $_SESSION['message']['error'];
+}
 
 $read = new Read;
 $data = $read->readDb();
@@ -18,9 +26,16 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
     $sendersName = $_POST['name'];
     $sendersEmail = $_POST['email'];
     $sendersMessage = $_POST['message'];
+    
+    $validate = new Validate;
+    $result = $validate->validateContact($sendersName, $sendersEmail, $sendersMessage);
 
-    $send = new Mail;
-    $send->sendMail($sendersName, $sendersEmail, $sendersMessage);
+    if ($result === true) {
+        $send = new Mail;
+        $send->sendMail($sendersName, $sendersEmail, $sendersMessage);
+    } else {
+        $messageError = 'Oops, something went wrong. :(';
+    }
 } // otherwise, let the spammer think that they got their message through
 
 ?>
@@ -38,9 +53,10 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
     <link rel="stylesheet" href="./css/contact.css">
     <link rel="stylesheet" href="./css/button.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/message.css">
 
     <!-- APP.js -->
-    <script src="./js/app.js" defer></script>
+    <script type="module" src="./js/app.js" defer></script>
 
     <!-- favicon -->
     <link rel="icon" type="image/png" href="./img/favicon.svg" />
@@ -57,6 +73,18 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
         </nav>
     </header>
     <main>
+    <!-- Messages -->
+    <?php if (isset($messageSuccess)): ?>
+        <div class="messageSuccess">
+            <?= $messageSuccess ?>
+            <?php unset($_SESSION['message']); ?>
+        </div>
+    <?php elseif(isset($messageError)): ?>
+        <div class="messageError">
+            <?php unset($_SESSION['message']); ?>
+            <?= $messageError ?>
+        </div>
+    <?php endif ?>
         <!-- About -->
         <div class="container hidden about" id="about">
             <div class="row">
@@ -114,15 +142,17 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
                 <div class="col-12 headline">
                     <h1>Contact me through email</h1>
                 </div>
+                <div class="col-12" id="notice">
+                </div>
                 <div class="col-12 form">
-                    <form action="" method="POST">
+                    <form name="contact" method="POST" onsubmit="return formValidate()">
 
                         <label>Email</label>
-                        <input placeholder="Email" name="email" type="text">
+                        <input placeholder="Email" id="email" name="email" type="text" required>
                         <label>Name</label>
-                        <input placeholder="Name" name="name" type="text">
+                        <input placeholder="Name" name="name" name="name" type="text" required>
                         <label>Message</label>
-                        <textarea placeholder="Message" name="message" cols="30" rows="10"></textarea>
+                        <textarea placeholder="Message" name="message" name="message" cols="30" rows="10" required></textarea>
                         <p class="antispam">Leave this empty: <input type="text" name="url" /></p>
 
                         <button class="submit-button">Send!</button>
@@ -159,4 +189,5 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
 </body>
 <script src="./js/box.js"></script>
 <script src="./js/easteregg.js"></script>
+<script src="./js/validateContact.js"></script>
 </html>
