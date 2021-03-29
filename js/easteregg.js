@@ -1,10 +1,11 @@
 const profile = document.getElementById('profile');
 var count = 0;
+const body = document.getElementById('body');
 
 profile.onclick = function counter() {
     count++;
     if (count++ >= 20) {
-        window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+        document.body.className = 'transform';
         count = 0;
     }
 }
