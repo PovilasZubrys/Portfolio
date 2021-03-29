@@ -15,7 +15,7 @@
     z-index: 1;
 }
 .messageSuccess {
-    background-color: rgba(150, 251, 49, 0.80);
+    background-color: rgba(107, 213, 1, 0.80);
     animation: messageSuccess ease-in 4s forwards;
 }
 .messageError {
