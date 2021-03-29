@@ -3,7 +3,7 @@
 class Validate {
     public function validateContact($sendersName, $sendersEmail, $sendersMessage) {
         
-        // This is regex for what validation will be searched for.
+        // This is regex for what validation will be searching for.
         $specialCharacters = '/([A-Za-z])\w+/u';
         $numbers = '/[0-9]+/';
         $properEmail = '/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/';
@@ -41,6 +41,21 @@ class Validate {
 
         // Checks if message contains special characters
         if (!preg_match_all($messageSpecial, $sendersMessage)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public function validateLogin($loginEmail) {
+
+        // Checks if email isn't empty.
+        if ($loginEmail === '') {
+            return false;
+        }
+
+        // Checks if email is a proper email.
+        if(!filter_var($loginEmail, FILTER_VALIDATE_EMAIL)) {
             return false;
         }
 
