@@ -73,6 +73,7 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
         </nav>
     </header>
     <main>
+    <!-- Messages -->
     <?php if (isset($messageSuccess)): ?>
         <div class="messageSuccess">
             <?= $messageSuccess ?>
@@ -147,11 +148,11 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
                     <form name="contact" method="POST" onsubmit="return formValidate()">
 
                         <label>Email</label>
-                        <input placeholder="Email" id="email" name="email" type="text">
+                        <input placeholder="Email" id="email" name="email" type="text" required>
                         <label>Name</label>
-                        <input placeholder="Name" name="name" name="name" type="text">
+                        <input placeholder="Name" name="name" name="name" type="text" required>
                         <label>Message</label>
-                        <textarea placeholder="Message" name="message" name="message" cols="30" rows="10"></textarea>
+                        <textarea placeholder="Message" name="message" name="message" cols="30" rows="10" required></textarea>
                         <p class="antispam">Leave this empty: <input type="text" name="url" /></p>
 
                         <button class="submit-button">Send!</button>
@@ -188,5 +189,5 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
 </body>
 <script src="./js/box.js"></script>
 <script src="./js/easteregg.js"></script>
-<!-- <script src="./js/validate.js"></script> -->
+<script src="./js/validateContact.js"></script>
 </html>
