@@ -73,6 +73,7 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
         </nav>
     </header>
     <main>
+    <!-- Messages -->
     <?php if (isset($messageSuccess)): ?>
         <div class="messageSuccess">
             <?= $messageSuccess ?>
@@ -188,5 +189,5 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
 </body>
 <script src="./js/box.js"></script>
 <script src="./js/easteregg.js"></script>
-<!-- <script src="./js/validate.js"></script> -->
+<script src="./js/validateContact.js"></script>
 </html>
