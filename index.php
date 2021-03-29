@@ -53,6 +53,7 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
     <link rel="stylesheet" href="./css/contact.css">
     <link rel="stylesheet" href="./css/button.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/easteregg.css">
     <link rel="stylesheet" href="./css/message.css">
 
     <!-- APP.js -->
@@ -63,7 +64,7 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
     <script src="https://kit.fontawesome.com/4acf51a376.js" crossorigin="anonymous"></script>
     <title>Povilas Zubrys</title>
 </head>
-<body>
+<body id="body">
     <header>
         <nav class="menu">
             <a href="">Home</a>
