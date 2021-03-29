@@ -10,5 +10,5 @@ Of course just me. It's my portfolio after all!
 ###### Can I see it live?
 
 Yup. here you go:
-    - https://www.povilaszubrys.lt
-    - https://test.povilaszubrys.lt (Here I test webpage before it goes to my main site)
+ - https://www.povilaszubrys.lt
+ - https://test.povilaszubrys.lt (Here I test everything before pushing it!)
