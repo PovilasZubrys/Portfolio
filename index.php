@@ -67,7 +67,6 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
 <body id="body">
     <header>
         <nav class="menu">
-            <a href="">Home</a>
             <a href="#about">About me</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
