@@ -28,9 +28,5 @@ function formValidate() {
         notice.innerHTML = '<div class="contactMessage">Oof, 50 characters long? Never heard of that long of a name. Please shorten it! Thanks!</div>';
         return false;
     }
-    if (!message.match(/^[A-Za-z0-9 ]+$/)) {
-        notice.innerHTML = '<div class="contactMessage">Please, no special characters! Thanks!</div>';
-        return false;
-    }
     return true;
 }
