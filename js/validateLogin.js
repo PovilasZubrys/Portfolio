@@ -12,3 +12,4 @@ function loginValidate() {
     }
     return true;
 }
+export default loginValidate();
