@@ -1,4 +1,4 @@
-(function () {
+function box() {
     var elements;
     var windowHeight;
 
@@ -24,4 +24,6 @@
 
     init();
     checkPosition();
-})();
+};
+
+export { box };

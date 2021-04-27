@@ -7,7 +7,6 @@ class Validate {
         $specialCharacters = '/([A-Za-z])\w+/u';
         $numbers = '/[0-9]+/';
         $properEmail = '/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/';
-        $messageSpecial = '/^[A-Za-z0-9]+$/';
 
         // Checks if name isn't empty.
         if ($sendersName === '') {
@@ -36,11 +35,6 @@ class Validate {
 
         // Checks if email is a proper email.
         if(!filter_var($sendersEmail, FILTER_VALIDATE_EMAIL)) {
-            return false;
-        }
-
-        // Checks if message contains special characters
-        if (!preg_match_all($messageSpecial, $sendersMessage)) {
             return false;
         }
 
