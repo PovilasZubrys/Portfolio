@@ -1,4 +1,5 @@
 function formValidate() {
+
     var email = document.forms["contact"]["email"].value;
     var name = document.forms["contact"]["name"].value;
     var message = document.forms["contact"]["message"].value;
