@@ -59,9 +59,6 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
     <link rel="stylesheet" href="./css/easteregg.css">
     <link rel="stylesheet" href="./css/message.css">
 
-    <!-- APP.js -->
-    <script type="module" src="./js/app.js" defer></script>
-
     <!-- favicon -->
     <link rel="icon" type="image/png" href="./img/favicon.svg" />
     <script src="https://kit.fontawesome.com/4acf51a376.js" crossorigin="anonymous"></script>
@@ -195,8 +192,6 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
         </div>
     </footer>
 </body>
-<!-- <script src="./js/box.js"></script>
-<script src="./js/easteregg.js"></script>
 <script src="./js/validateContact.js"></script> -->
-<script src="./js/app.js"></script>
+<script src="./js/app.js" type="module"></script>
 </html>

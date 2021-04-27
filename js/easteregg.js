@@ -11,4 +11,4 @@ function easteregg() {
         }
     }
 }
-export default easteregg();
+export { easteregg };
