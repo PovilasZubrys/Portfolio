@@ -192,6 +192,6 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
         </div>
     </footer>
 </body>
-<script src="./js/validateContact.js"></script> -->
+<script src="./js/validateContact.js"></script>
 <script src="./js/app.js" type="module"></script>
 </html>
