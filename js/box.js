@@ -26,4 +26,4 @@ function box() {
     checkPosition();
 };
 
-export default box();
+export { box };
