@@ -4,29 +4,31 @@ include('php/class/ReadDb.php');
 include('php/class/Mail.php');
 include('php/class/Validate.php');
 
+// Checking if success message is set.
 if (isset($_SESSION['message']['success'])) {
     $messageSuccess = $_SESSION['message']['success'];
 }
+
+// Checking if error message is set.
 if (isset($_SESSION['message']['error'])) {
     $messageError = $_SESSION['message']['error'];
 }
 
+// Reading database
 $read = new Read;
 $data = $read->readDb();
 
 $description = $data[0]['description'];
 $profilePicture = $data[0]['profile_picture'];
 
-if (isset($_SESSION['id'])) {
-    unset($_SESSION['id']);
-}
-// MAIL STUFF
+// Email stuff
 // if the url field is empty
 if(isset($_POST['url']) && $_POST['url'] == '') {
     $sendersName = $_POST['name'];
     $sendersEmail = $_POST['email'];
     $sendersMessage = $_POST['message'];
     
+    // Validating contact form.
     $validate = new Validate;
     $result = $validate->validateContact($sendersName, $sendersEmail, $sendersMessage);
 
@@ -45,6 +47,7 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- All the styles... ALL OF THEM! -->
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/layout.css">
     <link rel="stylesheet" href="./css/about.css">
@@ -55,9 +58,6 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/easteregg.css">
     <link rel="stylesheet" href="./css/message.css">
-
-    <!-- APP.js -->
-    <script type="module" src="./js/app.js" defer></script>
 
     <!-- favicon -->
     <link rel="icon" type="image/png" href="./img/favicon.svg" />
@@ -73,6 +73,7 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
         </nav>
     </header>
     <main>
+
     <!-- Messages -->
     <?php if (isset($messageSuccess)): ?>
         <div class="messageSuccess">
@@ -85,6 +86,7 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
             <?= $messageError ?>
         </div>
     <?php endif ?>
+
         <!-- About -->
         <div class="container hidden about" id="about">
             <div class="row">
@@ -113,6 +115,7 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
                 </div>                
             </div>
         </div>
+
         <!-- Projects -->
         <div class="container hidden projects" id="projects">
             <div class="row">
@@ -133,6 +136,7 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
                 </p>
             </div>
         </div>
+        
         <!-- Contact form -->
         <div class="container hidden contact-form" id="contact">
             <div class="row">
@@ -162,6 +166,7 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
         </div>
     </main>
     <footer>
+
         <!-- footer -->
         <div class="container footer">
             <div class="row">
@@ -187,7 +192,6 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
         </div>
     </footer>
 </body>
-<script src="./js/box.js"></script>
-<script src="./js/easteregg.js"></script>
-<script src="./js/validateContact.js"></script>
+<script src="./js/validateContact.js"></script> -->
+<script src="./js/app.js" type="module"></script>
 </html>

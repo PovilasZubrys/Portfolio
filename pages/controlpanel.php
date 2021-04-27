@@ -11,7 +11,15 @@ if (!isset($userId)) {
     header('Location: https://povilaszubrys.lt/');
 }
 
-// DESCRIPTION UPDATE
+// Update profile picture
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if(isset($_POST['image'])) {
+        $image = new Image;
+        $image->uploadImage($_FILES['image']);
+    }
+}
+
+// Description update
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if(isset($_POST['description'])) {
 
@@ -21,7 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: https://povilaszubrys.lt/pages/controlpanel.php');
     }
 }
-// NEW USER REGISTRATION
+
+// New User Registration
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_POST['username'] && $_POST['password1'] && $_POST['password2'] && $_POST['name'] && $_POST['surname'] && $_POST['email']) {
         
@@ -41,7 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
-// CHANGE PASSWORD
+
+// Change password
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_POST['newPassword1'] === $_POST['newPassword1']) {
         $newPassword1 = $_POST['newPassword1'];
@@ -51,7 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $updatePass->updatePassword($newPassword1, $newPassword2, $userId);
     }
 }
-// READ DATABASE
+
+// Read database
 $read = new Read;
 $data = $read->readUsers();
 foreach($data as $key) {
