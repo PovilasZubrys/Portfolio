@@ -1,6 +1,7 @@
 <?php
 
 class Mail {
+
     public function sendMail($sendersName, $sendersEmail, $sendersMessage) {    
 
         // put your email address here     
@@ -26,7 +27,7 @@ class Mail {
         mail($youremail, 'Contact Form', $body, $headers );
         $_SESSION['message']['success'] = 'Email was sent succesfully. I will contact you soon!';
         
-        header('Location: https://www.povilaszubrys.lt');
-        exit();
+        header("Location: https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
+        exit;
     }
 }

@@ -1,14 +1,13 @@
 <?php
 session_start();
 
-include('../php/class/ReadDb.php');
-include('../php/class/UpdateDb.php');
-include('../php/class/Signup.php');
+include 'includes/autoloader.inc.php';
 
 $userId = $_SESSION['id'];
 
 if (!isset($userId)) {
-    header('Location: https://povilaszubrys.lt/');
+    header("Location: https://$_SERVER[HTTP_HOST]");
+    exit;
 }
 
 // Update profile picture
@@ -26,7 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $update = new Update;
         $update->updateDescription($_POST['description']);
 
-        header('Location: https://povilaszubrys.lt/pages/controlpanel.php');
+        header("Location: https://$_SERVER[HTTP_HOST]/controlpanel.php");
+        exit;
     }
 }
 
@@ -46,7 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $connect = new Signup;
             $connect->signupNew($username, $name, $surname, $email, $password1);
 
-            header('Location: https://povilaszubrys.lt/pages/controlpanel.php');
+            header("Location: https://$_SERVER[HTTP_HOST]/controlpanel.php");
+            exit;
         }
     }
 }
@@ -80,10 +81,10 @@ foreach($data as $key) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/button.css">
-    <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/controlpanel.css">
+    <link rel="stylesheet" href="./css/button.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/controlpanel.css">
     <title>Control panel</title>
 </head>
 

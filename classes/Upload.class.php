@@ -1,10 +1,7 @@
 <?php
 session_start();
 
-include ('../php/class/Dbh.php');
-include ('../php/class/UpdateDb.php');
-
-class Image extends UpdateDb {
+class Upload extends Update {
 
     public function uploadImage() {
 
@@ -40,7 +37,8 @@ class Image extends UpdateDb {
                 $_SESSION['message'] = 'Successfully uploaded profile picture!';
 
                 // Redirecting to GET method
-                header('Location: https://povilaszubrys.lt/pages/controlpanel.php');
+                header("Location: https://$_SERVER[HTTP_HOST]/controlpanel.php");
+            exit;
 
             } else {
                 print_r($errors);

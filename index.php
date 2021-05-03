@@ -1,8 +1,7 @@
 <?php
 session_start();
-include('php/class/ReadDb.php');
-include('php/class/Mail.php');
-include('php/class/Validate.php');
+include 'includes/autoloader.inc.php';
+
 
 // Checking if success message is set.
 if (isset($_SESSION['message']['success'])) {
@@ -39,7 +38,6 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
         $messageError = 'Oops, something went wrong. :(';
     }
 } // otherwise, let the spammer think that they got their message through
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
