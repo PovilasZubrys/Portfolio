@@ -1,10 +1,7 @@
 <?php
 session_start();
 
-include ('../php/class/Dbh.php');
-include ('../php/class/UpdateDb.php');
-
-class Image extends UpdateDb {
+class Upload extends Update {
 
     public function uploadImage() {
 
