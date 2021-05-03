@@ -1,5 +1,4 @@
 <?php
-include('Dbh.php');
 
 class Read extends Dbh {
 
