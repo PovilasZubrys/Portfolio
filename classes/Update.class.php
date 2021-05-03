@@ -12,7 +12,8 @@ class Update extends Dbh {
 
         // Executing update.
         $stmt->execute(['description' => $description]);
-        header('Location: https://povilaszubrys.lt/pages/controlpanel.php');
+        header("Location: https://$_SERVER[HTTP_HOST]/controlpanel.php");
+        exit;
     }
 
     // Updating profile
@@ -25,7 +26,8 @@ class Update extends Dbh {
 
         // Executing update.
         $stmt->execute(['fileName' => $fileName]);
-        header('Location: https://povilaszubrys.lt/pages/controlpanel.php');
+        header("Location: https://$_SERVER[HTTP_HOST]/controlpanel.php");
+            exit;
     }
 
     // Updating password.
@@ -55,7 +57,8 @@ class Update extends Dbh {
             //Execute our UPDATE statement.
             $statement->execute();
             
-            header('Location: https://povilaszubrys.lt/pages/controlpanel.php');
+            header("Location: https://$_SERVER[HTTP_HOST]/controlpanel.php");
+            exit;
         }
     }
 }

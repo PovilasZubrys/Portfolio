@@ -16,6 +16,7 @@ class Signup extends Dbh {
         $this->connect()->exec($sql);
 
         // Routing to GET method.
-        header('Location: https://povilaszubrys.lt/pages/controlpanel.php');
+        header("Location: https://$_SERVER[HTTP_HOST]/controlpanel.php");
+        exit;
     }
 }

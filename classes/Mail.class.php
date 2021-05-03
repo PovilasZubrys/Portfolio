@@ -27,7 +27,7 @@ class Mail {
         mail($youremail, 'Contact Form', $body, $headers );
         $_SESSION['message']['success'] = 'Email was sent succesfully. I will contact you soon!';
         
-        header('Location: ' . $_SERVER['HTTP_HOST']);
+        header("Location: https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
         exit;
     }
 }
