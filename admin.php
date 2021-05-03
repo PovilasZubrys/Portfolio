@@ -1,8 +1,7 @@
 <?php
 
-include('../php/class/Dbh.php');
-include('../php/class/Login.php');
-include('../php/class/Validate.php');
+include 'includes/autoloader.inc.php';
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_POST['email'] && $_POST['password']) {
@@ -31,12 +30,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="../css/layout.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/button.css">
-    <link rel="stylesheet" href="../css/admin.css">
-    <link rel="stylesheet" href="../css/message.css">
-    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/button.css">
+    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="./css/message.css">
+    <link rel="stylesheet" href="./css/contact.css">
 
     <!-- favicon -->
     <link rel="icon" type="image/png" href="./img/favicon.svg" />
@@ -75,6 +74,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
     </main>
-    <script src="../js/validateLogin.js"></script>
+    <script src="./js/validateLogin.js"></script>
 </body>
 </html>
