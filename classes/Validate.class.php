@@ -1,6 +1,7 @@
 <?php
 
 class Validate {
+    
     public function validateContact($sendersName, $sendersEmail, $sendersMessage) {
         
         // This is regex for what validation will be searching for.
