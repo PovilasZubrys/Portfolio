@@ -38,7 +38,6 @@ if(isset($_POST['url']) && $_POST['url'] == '') {
         $messageError = 'Oops, something went wrong. :(';
     }
 } // otherwise, let the spammer think that they got their message through
-var_dump($_SERVER['HTTP_HOST']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
