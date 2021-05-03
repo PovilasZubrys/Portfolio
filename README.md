@@ -11,4 +11,3 @@ Of course just me. It's my portfolio after all!
 
 Yup. here you go:
  - https://www.povilaszubrys.lt
- - http://test.povilaszubrys.lt (Here I test everything before pushing it!)
