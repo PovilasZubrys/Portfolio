@@ -1,6 +1,7 @@
 <?php
 
 class Mail {
+
     public function sendMail($sendersName, $sendersEmail, $sendersMessage) {    
 
         // put your email address here     
