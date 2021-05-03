@@ -19,7 +19,8 @@ class Login extends Dbh {
         if(password_verify($password, $tables[0]['password']) && $email === $tables[0]['email']) {
 
             $_SESSION['id'] = $tables[0]['id'];
-            header('Location: https://povilaszubrys.lt/pages/controlpanel.php');
+            header("Location: https://$_SERVER[HTTP_HOST]/controlpanel.php");
+            exit;
         }
     }
 }
