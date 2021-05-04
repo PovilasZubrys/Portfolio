@@ -1,44 +1,11 @@
 <?php
 session_start();
 include 'includes/autoloader.inc.php';
-
-
-// Checking if success message is set.
-if (isset($_SESSION['message']['success'])) {
-    $messageSuccess = $_SESSION['message']['success'];
-}
-
-// Checking if error message is set.
-if (isset($_SESSION['message']['error'])) {
-    $messageError = $_SESSION['message']['error'];
-}
-
-// Reading database
-$read = new Read;
-$data = $read->readDb();
-
-$description = $data[0]['description'];
-$profilePicture = $data[0]['profile_picture'];
-
-// Email stuff
-// if the url field is empty
-if(isset($_POST['url']) && $_POST['url'] == '') {
-    $sendersName = $_POST['name'];
-    $sendersEmail = $_POST['email'];
-    $sendersMessage = $_POST['message'];
-    
-    // Validating contact form.
-    $validate = new Validate;
-    $result = $validate->validateContact($sendersName, $sendersEmail, $sendersMessage);
-
-    if ($result === true) {
-        $send = new Mail;
-        $send->sendMail($sendersName, $sendersEmail, $sendersMessage);
-    } else {
-        $messageError = 'Oops, something went wrong. :(';
-    }
-} // otherwise, let the spammer think that they got their message through
+include 'includes/message.inc.php';
+include 'includes/readDb.inc.php';
+include 'includes/mail.inc.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
