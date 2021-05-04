@@ -44,3 +44,9 @@ label {
 input:focus {
     outline-color: #04C2C9;
 }
+.container {
+    padding: 0px;
+}
+header {
+    padding-top: 100px;
+}

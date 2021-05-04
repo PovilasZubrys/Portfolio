@@ -3,13 +3,10 @@
 spl_autoload_register('autoLoader');
 
 function autoLoader($className) {
-    $path = 'classes/';
-    $ext = '.class.php';
-    $fullPath = $path . $className . $ext;
 
-    if (!file_exists($fullPath)) {
+    if (!file_exists('classes/'.$className.'.class.php')) {
         return false;
     }
 
-    include_once $fullPath;
+    include_once 'classes/'.$className.'.class.php';
 }
