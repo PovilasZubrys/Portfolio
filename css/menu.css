@@ -25,4 +25,5 @@
 .menu > a:hover {
     transition: 0.3s;
     color: #04C2C9;
+    cursor: pointer;
 }

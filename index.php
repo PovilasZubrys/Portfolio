@@ -1,9 +1,9 @@
 <?php
 session_start();
 include 'includes/autoloader.inc.php';
-include 'includes/message.inc.php';
-include 'includes/readDb.inc.php';
-include 'includes/mail.inc.php';
+include 'includes/homepage/message.inc.php';
+include 'includes/homepage/readDb.inc.php';
+include 'includes/homepage/mail.inc.php';
 ?>
 
 <!DOCTYPE html>
