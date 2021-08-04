@@ -1,11 +1,9 @@
 <?php
 
-// Read user database
 $read = new Read;
-$data = $read->readUsers();
-foreach($data as $key) {
-    if ($key['id'] === $userId) {
-        $userName = $key['name'];
-        $userSurname = $key['surname'];
-    }
+$user = $read->getUser($userId);
+
+if ($user[0]['id'] === $userId) {
+    $userName = $user[0]['name'];
+    $userSurname = $user[0]['surname'];
 }

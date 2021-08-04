@@ -1,21 +1,15 @@
 <?php
 session_start();
 
-class Login extends Dbh {
-
-    // Login to control panel
-    public function loginCP($email, $password) {
-
-        // Selecting which fields to check
+class Login extends Dbh 
+{
+    public function login($email, $password) 
+    {
         $sql = "SELECT id, email, password
         FROM user";
 
-        // Fetcing information from database
-        $statement = $this->connect()->prepare($sql);
-        $statement->execute();
-        $tables = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $tables = $this->get($sql);
 
-        // Verifying password from databes.
         if(password_verify($password, $tables[0]['password']) && $email === $tables[0]['email']) {
 
             $_SESSION['id'] = $tables[0]['id'];
