@@ -2,8 +2,8 @@
 
 class Validate {
     
-    public function validateContact($sendersName, $sendersEmail, $sendersMessage) {
-        
+    public function validateContact($sendersName, $sendersEmail, $sendersMessage)
+    {
         // This is regex for what validation will be searching for.
         $specialCharacters = '/([A-Za-z])\w+/u';
         $numbers = '/[0-9]+/';

@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($result === true) {
             $connect = new Login;
-            $connect->loginCP($email, $password);
+            $connect->login($email, $password);
         } else {
             $messageError = 'Oops, something went wrong. :(';
         }
