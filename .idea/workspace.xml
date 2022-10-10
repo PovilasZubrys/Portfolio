@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a30f6ac-7ede-4d0b-aaeb-d4359bbc9c48" name="Changes" comment="Setting up design">
+    <list default="true" id="7a30f6ac-7ede-4d0b-aaeb-d4359bbc9c48" name="Changes" comment="Homepage design">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/about.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/contact.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/contact.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -219,7 +214,7 @@
       <workItem from="1665250680519" duration="254000" />
       <workItem from="1665250973211" duration="479000" />
       <workItem from="1665253049249" duration="1384000" />
-      <workItem from="1665410187533" duration="9104000" />
+      <workItem from="1665410187533" duration="9632000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <created>1665410265520</created>
@@ -242,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665430598248</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Homepage design">
+      <created>1665433415253</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665433415253</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +265,7 @@
     <MESSAGE value="Changes" />
     <MESSAGE value="Setup of portoflio" />
     <MESSAGE value="Setting up design" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setting up design" />
+    <MESSAGE value="Homepage design" />
+    <option name="LAST_COMMIT_MESSAGE" value="Homepage design" />
   </component>
 </project>

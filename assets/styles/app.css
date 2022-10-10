@@ -16,7 +16,7 @@ main > div {
     padding-top: 10px;
 }
 .headline {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 @keyframes fade-in {
     from {opacity: 0; transform: scale(.7,.7)}
