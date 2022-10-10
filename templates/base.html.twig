@@ -14,6 +14,22 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+    <header>
+        <nav class="menu">
+            {% if controller is defined and controller == 'admin' %}
+                <a href="/">Home Page</a>
+                <a href="/admin/new_project">Add project</a>
+            {% else %}
+                <a href="#about">About me</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            {% endif %}
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <a href="/admin">Admin Panel</a>
+                <a href="/logout">Logout</a>
+            {% endif %}
+        </nav>
+    </header>
+    {% block body %}{% endblock %}
     </body>
 </html>
