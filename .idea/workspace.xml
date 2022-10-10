@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a30f6ac-7ede-4d0b-aaeb-d4359bbc9c48" name="Changes" comment="Description change">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+    <list default="true" id="7a30f6ac-7ede-4d0b-aaeb-d4359bbc9c48" name="Changes" comment="Login/Registration Auth">
       <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +218,7 @@
       <workItem from="1665250680519" duration="254000" />
       <workItem from="1665250973211" duration="479000" />
       <workItem from="1665253049249" duration="1384000" />
-      <workItem from="1665410187533" duration="11693000" />
+      <workItem from="1665410187533" duration="11757000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <created>1665410265520</created>
@@ -261,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665433958410</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Login/Registration Auth">
+      <created>1665436744085</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1665436744085</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,6 +285,7 @@
     <MESSAGE value="Setting up design" />
     <MESSAGE value="Homepage design" />
     <MESSAGE value="Description change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Description change" />
+    <MESSAGE value="Login/Registration Auth" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login/Registration Auth" />
   </component>
 </project>
