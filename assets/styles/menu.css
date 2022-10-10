@@ -1,0 +1,29 @@
+.menu {
+    text-align: center;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: #1B242F;
+    height: 50px;
+    position: fixed;
+    border-bottom: solid 3px #04C2C9;
+    animation-name: menu;
+    animation-duration: 1s;
+    z-index: 1;
+}
+@keyframes menu {
+    from {height: 0px}
+    to {height: 50px}
+}
+.menu > a {
+    margin-left: 15px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    line-height: 50px;
+}
+.menu > a:hover {
+    transition: 0.3s;
+    color: #04C2C9;
+    cursor: pointer;
+}

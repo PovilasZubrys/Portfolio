@@ -1,0 +1,38 @@
+.footer {
+    background-color: #1B242F;
+}
+.footer > .container > .container > .row > .socials > .headline {
+    margin-bottom: 5px;
+} 
+.footer > .container > .row > .links > .headline > h2,
+.footer > .container > .row > .socials > .headline > h2 {
+    color: white;
+}
+
+.footer > .container > .row > .socials > a {
+    font-size: 15px;
+    font-weight: 200;
+    display: block;
+}
+
+.footer > .container > .row > .socials > a > .fab {
+    font-size: 20px;
+    margin-right: 5px;
+}
+.footer > .container > .row > .links > a {
+    display: block;
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.footer > .container > .row > .socials > a,
+.footer > .container > .row > .links > a,
+.footer > .container > .row > .socials > a > .fab {
+    color: white;
+    text-decoration: none;
+    vertical-align: middle;
+    width: fit-content;
+}
+.line {
+    opacity: 0.2;
+}

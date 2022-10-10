@@ -3,18 +3,123 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <header>
+        <nav class="menu">
+            <a href="#about">About me</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <!-- About -->
+        <div class="about fade-in-element">
+            <div class="container" id="about">
+                <div class="row">
+                    <div class="col-12 title">
+                        <h1>About</h1>
+                    </div>
+                    <div class="col-12 headline">
+                        <h1>First, let me introduce myself!</h1>
+                    </div>
+                    <div class="col-4 col-md-12 imgContainer">
+                        <div class="image">
+                            <img id="profile" src="{{ asset('build/images/profile.73550d0d.jpg') }}" alt="profile">
+                        </div>
+                    </div>
+                    <div class="col-8 col-md-12">
+                        <div class="description">
+                            <p>
+                                Aprašymas
+                            </p>
+                        </div>
+                    </div>
+                    <div class="socials col-4 col-md-12">
+                        <a href="https://www.instagram.com/povilaszubrys/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/PovilasZubrys" target="_blank"><i class="fab fa-github-square"></i></a>
+                        <a href="https://www.linkedin.com/in/povilas-zubrys-3315161b9/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+        <!-- Projects -->
+        <div class="projects fade-in-element">
+            <div class="container" id="projects">
+                <div class="row">
+                    <div class="col-12 title">
+                        <h1>My Projects</h1>
+                    </div>
+                    <div class="col-12 headline">
+                        <h1>My project gallery</h1>
+                    </div>
+                    <div class="col-12">
+                        <img src="{{ asset('build/images/notfound.e41c8867.gif') }}" alt="">
+                    </div>
+                    <p class="col-12 title">
+                        Oh no! It's so empty in here!
+                    </p>
+                    <p class="col-12 subtitle">
+                        But do not worry my friend! I am working on populating this empty void of space!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Contact form -->
+        <div class="contact-form">
+            <div class="container" id="contact">
+                <div class="row">
+                    <div class="col-12 title">
+                        <h1>Contact me</h1>
+                    </div>
+                    <div class="col-12 headline">
+                        <h1>Contact me through email</h1>
+                    </div>
+                    <div class="col-12" id="notice">
+                    </div>
+                    <div class="col-12 form">
+                        <form name="contact" method="POST" onsubmit="return formValidate()">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'D:/development/Portfolio/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'D:/development/Portfolio/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+                            <label>Email</label>
+                            <input placeholder="Email" id="email" name="email" type="text" required>
+                            <label>Name</label>
+                            <input placeholder="Name" name="name" name="name" type="text" required>
+                            <label>Message</label>
+                            <textarea placeholder="Message" name="message" name="message" cols="30" rows="10" required></textarea>
+                            <p class="antispam">Leave this empty: <input type="text" name="url" /></p>
+
+                            <button class="submit-button">Send!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+        <!-- footer -->
+        <div class="footer fade-in-element">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-md-12 links">
+                        <div class="col-12 headline">
+                            <h2>Links</h2>
+                        </div>
+                        <a href="">Home</a>
+                        <a href="#about">About me</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="col-6 col-md-12 socials">
+                        <div class="col-12 headline">
+                            <h2>Socials</h2>
+                        </div>
+                        <a href="https://github.com/PovilasZubrys" target="_blank"><i class="fab fa-github-square"></i>Github profile</a>
+                        <a href="https://www.linkedin.com/in/povilas-zubrys-3315161b9/" target="_blank"><i class="fab fa-linkedin"></i>Linked In</a>
+                        <a href="https://www.instagram.com/povilaszubrys/" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
+                    </div>
+                    <hr class="col-12 line">
+                </div>
+            </div>
+        </div>
+    </footer>
 {% endblock %}

@@ -1,0 +1,62 @@
+.image,
+.image > img{
+    width: 200px;
+    height: 200px;
+    clip-path: circle();
+    margin-left: auto;
+    margin-right: auto;
+}
+.description {
+    height: 100%;
+    padding: 70px 0;
+}
+.title {
+    text-align: center;
+    font-size: 25px;
+}
+.subtitle {
+    text-align: center;
+    font-size: 18px;
+}
+.headline {
+    border-bottom: solid 3px #E31B6D; 
+}
+.about > .container > .row > .socials {
+    font-size: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+}
+.about > .container > .row > .socials > a {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+}
+.about > .container > .row > .socials > a > i {
+    transition: 0.5s;
+}
+.about > .container > .row > .socials > a > i:hover,
+.about > .container > .row > .socials > a:hover {
+    text-decoration: none;
+    color: #04C2C9;
+    transition: 0.5s;
+    transform: scale(2);
+}
+@media(max-width: 750px) {
+    .imgContainer {
+        margin-top: 20px;
+    }
+    .image,
+    .image > img {
+        width: 200px;
+        height: 200px;
+    }
+    .description > p {
+        text-align: center;
+        font-size: 18px;
+    }
+}
+@media(max-width: 360px) {
+    body {
+        font-size: 80%;
+    }
+}
