@@ -18,6 +18,9 @@ main > div {
 .headline {
     margin-bottom: 15px;
 }
+.headline > h1 {
+    margin-bottom: 0px;
+}
 @keyframes fade-in {
     from {opacity: 0; transform: scale(.7,.7)}
     to {opacity: 1;}
