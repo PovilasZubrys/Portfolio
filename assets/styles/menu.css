@@ -15,7 +15,8 @@
     from {height: 0px}
     to {height: 50px}
 }
-.menu > a {
+.menu > a,
+.menu > div > a {
     margin-left: 15px;
     font-size: 18px;
     text-decoration: none;

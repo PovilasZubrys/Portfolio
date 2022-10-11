@@ -26,6 +26,9 @@ class Projects
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $image_path = null;
 
+    #[ORM\Column]
+    private ?int $deleted = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +78,18 @@ class Projects
     public function setImagePath(?string $image_path): self
     {
         $this->image_path = $image_path;
+
+        return $this;
+    }
+
+    public function getDeleted(): ?int
+    {
+        return $this->deleted;
+    }
+
+    public function setDeleted(int $deleted): self
+    {
+        $this->deleted = $deleted;
 
         return $this;
     }
