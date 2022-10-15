@@ -25,6 +25,6 @@ main > div {
     from {opacity: 0; transform: scale(.7,.7)}
     to {opacity: 1;}
 }
-.fade-in-element {
-    animation: fade-in 1.4s;
-}
+/*.fade-in-element {*/
+/*    animation: fade-in 1.4s;*/
+/*}*/

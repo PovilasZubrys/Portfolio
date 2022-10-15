@@ -35,6 +35,20 @@
                 <a href="/admin">Admin Panel</a>
                 <a href="/logout">Logout</a>
             {% endif %}
+
+            {# Flash messages #}
+            {% for message in app.flashes('notice') %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('warning') %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
         </nav>
     </header>
     {% block body %}{% endblock %}
