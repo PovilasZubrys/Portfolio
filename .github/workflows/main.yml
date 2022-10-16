@@ -1,0 +1,20 @@
+name: Deploy Site on push
+on:
+  push:
+    branches:
+      - master
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Installing project dependencies
+      run: composer install
+    - name: Running migrations
+      run: php bin/console doctrine:migrations:migrate
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: ${{ secrets.LARAVEL_SITE_SERVER}}
+        username: ${{ secrets.LARAVEL_SITE_USER}}
+        password: ${{ secrets.LARAVEL_SITE_PASS}}
