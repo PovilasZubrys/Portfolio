@@ -101,7 +101,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/password-hasher" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/flex" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/options-resolver" />
-      <excludeFolder url="file://$MODULE_DIR$/public/build" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/requirements-checker" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/masterminds/html5" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phar-io/manifest" />
