@@ -10,6 +10,13 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
+    - name: Create env file
+      run: |
+        touch .env
+        echo APP_ENV=prod >> .env
+        echo DATABASE_URL=${{ secrets.DATABASE_URL }} >> .env
+        echo APP_SECRET=${{ secrets.APP_SECRET }} >> .env
+        echo MESSENGER_TRANSPORT_DSN=${{ secrets.MESSENGER_TRANSPORT_DSN }} >> .env
     - name: Installing project dependencies
       run: composer install
     - name: Running migrations
