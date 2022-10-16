@@ -15,6 +15,6 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: ${{ secrets.LARAVEL_SITE_SERVER}}
-        username: ${{ secrets.LARAVEL_SITE_USER}}
-        password: ${{ secrets.LARAVEL_SITE_PASS}}
+        server: ${{ secrets.SYMFONY_SITE_SERVER}}
+        username: ${{ secrets.SYMFONY_SITE_USER}}
+        password: ${{ secrets.SYMFONY_SITE_PASS}}
