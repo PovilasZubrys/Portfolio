@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projects list{% endblock %}
+
+{% block body %}
+<main>
+    <div class="container">
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Url</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% set count = 1 %}
+                {% for project in projects %}
+                    <tr>
+                        <th scope="row">{{ count }}</th>
+                        <td>{{ project.id }}</td>
+                        <td>{{ project.title }}</td>
+                        <td>{{ project.url }}</td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="/admin/projects/view/{{ project.id }}" class="btn btn-primary">VIEW</a>
+                                <a href="" class="btn btn-success">EDIT</a>
+                                <a href="/admin/projects/recover/{{ project.id }}" class="btn btn-danger">RECOVER</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% set count = count + 1 %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+{% endblock %}

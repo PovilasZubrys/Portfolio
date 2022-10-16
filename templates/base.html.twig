@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href=" {{ asset('build/images/favicon.fe056ed8.svg') }}">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+    <header>
+        <nav class="menu">
+            {% if controller is defined and controller == 'admin' %}
+                <a href="/">Home Page</a>
+                <div class="dropdown" style="display: inline-block">
+                    <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Projects <i class="fa-solid fa-caret-down"></i></a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="/admin/new_project">New project</a></li>
+                        <li><a class="dropdown-item" href="/admin/projects">Active projects</a></li>
+                        <li><a class="dropdown-item" href="/admin/projects/deleted">Deleted projects</a></li>
+                    </ul>
+                </div>
+            {% else %}
+                <a href="#about">About me</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            {% endif %}
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <a href="/admin">Admin Panel</a>
+                <a href="/logout">Logout</a>
+            {% endif %}
+
+            {# Flash messages #}
+            {% for message in app.flashes('notice') %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('warning') %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        </nav>
+    </header>
+    {% block body %}{% endblock %}
+    </body>
+</html>

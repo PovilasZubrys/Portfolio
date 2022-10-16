@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add New Project{% endblock %}
+
+{% block body %}
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="form">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <button class="submit-button" type="submit">Submit!</button>
+                {{form_end(form)}}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
