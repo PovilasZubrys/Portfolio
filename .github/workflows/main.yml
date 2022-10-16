@@ -8,20 +8,11 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v2
-    - name: Create env file
-      run: |
-        touch .env
-        echo APP_ENV=prod >> .env
-        echo DATABASE_URL=${{ secrets.DATABASE_URL }} >> .env
-        echo APP_SECRET=${{ secrets.APP_SECRET }} >> .env
-        echo MESSENGER_TRANSPORT_DSN=${{ secrets.MESSENGER_TRANSPORT_DSN }} >> .env
-    - name: Installing project dependencies
-      run: composer install
-    - name: Running migrations
-      run: php bin/console doctrine:migrations:migrate
-    - name: Connecting to server
-      run: 
-          ${{ secrets.SSH_CONNECT }}
-          ${{ secrets.SSH_PASS }}
+    - name: Execute commands
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.SSH_PORT }}
+        script: sh yourscript.sh
