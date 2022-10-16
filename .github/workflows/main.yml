@@ -21,9 +21,7 @@ jobs:
       run: composer install
     - name: Running migrations
       run: php bin/console doctrine:migrations:migrate
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
-      with:
-        server: ${{ secrets.SYMFONY_SITE_SERVER}}
-        username: ${{ secrets.SYMFONY_SITE_USER}}
-        password: ${{ secrets.SYMFONY_SITE_PASS}}
+    - name: Connecting to server
+      run: 
+          ${{ secrets.SSH_CONNECT }}
+          ${{ secrets.SSH_PASS }}
