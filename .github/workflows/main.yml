@@ -8,13 +8,11 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: Installing project dependencies
-      run: composer install
-    - name: Running migrations
-      run: php bin/console doctrine:migrations:migrate
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+    - name: Execute commands
+      uses: appleboy/ssh-action@master
       with:
-        server: ${{ secrets.SYMFONY_SITE_SERVER}}
-        username: ${{ secrets.SYMFONY_SITE_USER}}
-        password: ${{ secrets.SYMFONY_SITE_PASS}}
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.SSH_PORT }}
+        script: cd ${{ secrets.PUBLIC_DIR }}; sh build.sh
