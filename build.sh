@@ -6,7 +6,6 @@ ENDCOLOR="\e[0m"
 echo -e "${CYAN}Pulling from git${ENDCOLOR}"
 git fetch origin master
 git reset --hard origin/master
-git clean -fdx
 echo -e "${CYAN}Updating composer${ENDCOLOR}"
 ./composer.phar update
 #composer update
