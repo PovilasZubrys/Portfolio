@@ -4,7 +4,9 @@ CYAN="\e[46m"
 ENDCOLOR="\e[0m"
 
 echo -e "${CYAN}Pulling from git${ENDCOLOR}"
-git pull origin master
+git fetch origin master
+git reset --hard origin/master
+git clean -fdx
 echo -e "${CYAN}Updating composer${ENDCOLOR}"
 ./composer.phar update
 #composer update

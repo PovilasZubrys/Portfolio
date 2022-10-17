@@ -27,7 +27,7 @@ class Projects
     private ?string $image_path = null;
 
     #[ORM\Column]
-    private ?int $deleted = null;
+    private ?int $deleted = 0;
 
     public function getId(): ?int
     {
