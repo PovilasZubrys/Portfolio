@@ -5,7 +5,7 @@
 .footer .headline {
     margin-bottom: 5px;
 }
-footer a {
+.footer a {
     --bs-link-color: white;
     --bs-link-hover-color: #04C2C9;
     text-decoration: none;
@@ -15,6 +15,7 @@ svg {
     margin-right: 2px;
 }
 .footer .hero {
+    width: 100%;
     align-items: normal;
 }
 .right,

@@ -21,20 +21,16 @@
     display: flex;
     align-items: center;
     gap: 30px;
-    max-width: 700px;
 }
+.right,
 .left {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
-.right {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
 .socials {
-    width: 200px;
+    margin: 10px 0;
+    width: 100%;
     text-align: center;
     font-size: 30px;
     line-height: 30px;
@@ -53,5 +49,8 @@
     }
     .left {
         gap: 15px;
+    }
+    .socials {
+        width: 100%;
     }
 }
