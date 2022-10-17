@@ -1,44 +1,36 @@
 .footer {
+    padding: 10px 0;
     background-color: #1B242F;
 }
-.footer > .container > .container > .row > .footer-socials > .headline {
+.footer .headline {
     margin-bottom: 5px;
-} 
-.footer > .container > .row > .links > .headline > h2,
-.footer > .container > .row > .footer-socials > .headline > h2 {
-    color: white;
-    margin-bottom: 0px;
 }
-
-.footer > .container > .row > .footer-socials > a {
-    font-size: 15px;
-    font-weight: 200;
-    display: block;
-}
-
-.footer > .container > .row > .footer-socials > a > .fab {
-    font-size: 20px;
-    margin-right: 5px;
-}
-.footer > .container > .row > .links > a {
-    display: block;
-    font-size: 15px;
-    font-weight: 200;
-}
-
-.footer > .container > .row > .footer-socials > a,
-.footer > .container > .row > .links > a,
-.footer > .container > .row > .footer-socials > a > .fab {
-    color: white;
+.footer a {
+    --bs-link-color: white;
+    --bs-link-hover-color: #04C2C9;
     text-decoration: none;
-    vertical-align: middle;
-    width: fit-content;
+    transition: 0.5s;
 }
-.footer > .container > .row > .footer-socials > a:hover,
-.footer > .container > .row > .links > a:hover,
-.footer > .container > .row > .footer-socials > a > .fab:hover {
-    color: #04C2C9;
+svg {
+    margin-right: 2px;
 }
-.line {
-    opacity: 0.2;
+.footer .hero {
+    width: 100%;
+    align-items: normal;
+}
+.right,
+.left {
+    width: 50%;
+    gap: 0;
+}
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        gap: 0px;
+    }
+    .right,
+    .left {
+        gap: 0px;
+        width: 100%
+    }
 }

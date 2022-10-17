@@ -5,62 +5,54 @@
 {% block body %}
     <main>
         <!-- About -->
-        <div class="about">
-            <div class="container" id="about">
+        <div class="about" id="about">
+            <div class="container">
                 <div class="row">
                     <div class="col-12 headline">
                         <h1>First, let me introduce myself!</h1>
                     </div>
-                    <div class="col-xs-12 col-md-4 imgContainer">
-                        <div class="image">
-                            <img id="profile" src="{{ asset('build/images/profile.73550d0d.jpg') }}" alt="profile">
-                        </div>
-                        <div>
-                            <div class="col-12" style="margin-top: 10px">
-                                <div class="socials" style="text-align: center">
-                                    <a href="https://www.instagram.com/povilaszubrys/" target="_blank"><i class="fab fa-instagram"></i></a>
-                                    <a href="https://github.com/PovilasZubrys" target="_blank"><i class="fab fa-github-square"></i></a>
-                                    <a href="https://www.linkedin.com/in/povilas-zubrys-3315161b9/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                                </div>
+                    <div class="hero">
+                        <div class="left">
+                            <img class="image" src="{{ asset('build/images/profile.73550d0d.jpg') }}" alt="profile">
+                            <div class="socials">
+                                <a href="https://www.instagram.com/povilaszubrys/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="https://github.com/PovilasZubrys" target="_blank"><i class="fab fa-github-square"></i></a>
+                                <a href="https://www.linkedin.com/in/povilas-zubrys-3315161b9/" target="_blank"><i class="fab fa-linkedin"></i></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 col-md-8">
-                        <div class="description">
-                            <p>Hey! I am a junior developer! I love everything IT related, from hardware to software, love every bit of it! Apart from IT, I also love snowboarding/skiing, motorcycles. So, we can meet on the slopes, on the road or in the office nerding about new IT stuff 🤩</p>
-                        </div>
+                        <p>Hey! I am a junior developer! I love everything IT related, from hardware to software, love every bit of it! Apart from IT, I also love snowboarding/skiing, motorcycles. So, we can meet on the slopes, on the road or in the office nerding about new IT stuff 🤩</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Projects -->
-        <div class="projects">
-            <div class="container" id="projects">
+        <div class="projects" id="projects">
+            <div class="container">
                 <div class="row">
                     <div class="col-12 headline">
                         <h1>My project gallery</h1>
                     </div>
-                    <div class="col-12">
-                        <img src="{{ asset('build/images/notfound.e41c8867.gif') }}" alt="">
+                    <div class="col-12" style="text-align: center">
+                        <div>
+                            <img class="image" src="{{ asset('build/images/notfound.e41c8867.gif') }}" alt="">
+                        </div>
+                        <h3>
+                            Oh no! It's so empty in here!
+                        </h3>
+                        <p>
+                            But do not worry my friend! I am working on populating this empty void of space!
+                        </p>
                     </div>
-                    <p class="col-12 title">
-                        Oh no! It's so empty in here!
-                    </p>
-                    <p class="col-12 subtitle">
-                        But do not worry my friend! I am working on populating this empty void of space!
-                    </p>
                 </div>
             </div>
         </div>
         <!-- Contact form -->
-        <div class="contact-form">
-            <div class="container" id="contact">
+        <div class="contact-form" id="contact">
+            <div class="container">
                 <div class="row">
                     <div class="col-12 headline">
                         <h1>Contact me through email</h1>
-                    </div>
-                    <div class="col-12" id="notice">
                     </div>
                     <div class="col-12 form">
                         <form name="contact" method="POST">
@@ -68,7 +60,6 @@
                             <input class="textarea" placeholder="Name" name="name" name="name" type="text" required>
                             <textarea class="textarea" placeholder="Message" name="message" name="message" cols="30" rows="10" required></textarea>
                             <p class="antispam">Leave this empty: <input type="text" name="url" /></p>
-
                             <button class="submit-button" type="submit">Send!</button>
                         </form>
                     </div>
@@ -76,14 +67,14 @@
             </div>
         </div>
     </main>
-    <footer>
 
+    <footer>
         <!-- footer -->
         <div class="footer">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 links">
-                        <div class="col-12 headline">
+                <div class="hero">
+                    <div class="left">
+                        <div class="headline">
                             <h2>Links</h2>
                         </div>
                         <a href="">Home</a>
@@ -91,15 +82,14 @@
                         <a href="#projects">Projects</a>
                         <a href="#contact">Contact</a>
                     </div>
-                    <div class="col-sm-12 col-md-6 footer-socials">
-                        <div class="col-12 headline">
+                    <div class="right">
+                        <div class="headline">
                             <h2>Socials</h2>
                         </div>
                         <a href="https://github.com/PovilasZubrys" target="_blank"><i class="fab fa-github-square"></i>Github profile</a>
                         <a href="https://www.linkedin.com/in/povilas-zubrys-3315161b9/" target="_blank"><i class="fab fa-linkedin"></i>Linked In</a>
                         <a href="https://www.instagram.com/povilaszubrys/" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
                     </div>
-                    <hr class="col-12 line">
                 </div>
             </div>
         </div>
