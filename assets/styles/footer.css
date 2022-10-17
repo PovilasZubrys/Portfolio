@@ -7,6 +7,7 @@
 .footer > .container > .row > .links > .headline > h2,
 .footer > .container > .row > .footer-socials > .headline > h2 {
     color: white;
+    margin-bottom: 0px;
 }
 
 .footer > .container > .row > .footer-socials > a {
