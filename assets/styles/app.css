@@ -11,3 +11,11 @@ body * {
 main {
     margin-top: 50px;
 }
+.row {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.container {
+    max-width: 1vm;
+}

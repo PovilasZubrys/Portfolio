@@ -1,0 +1,18 @@
+.alert {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    height: 30px;
+    border-radius: 7px;
+    width: 100%;
+}
+.alert-warning {
+    background-color: indianred;
+}
+
+.alert-success {
+    background-color: limegreen;
+}

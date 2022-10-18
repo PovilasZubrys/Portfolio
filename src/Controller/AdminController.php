@@ -17,8 +17,6 @@ class AdminController extends AbstractController
 
     public function __construct(ProjectsRepository $projectsRepository, EntityManagerInterface $em)
     {
-        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-
         $this->projectsRepository = $projectsRepository;
         $this->em = $em;
     }
@@ -26,6 +24,8 @@ class AdminController extends AbstractController
     #[Route('/admin', name: 'admin')]
     public function index(): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
         return $this->render('admin/index.html.twig', [
             'controller' => 'admin',
         ]);
@@ -34,6 +34,7 @@ class AdminController extends AbstractController
     #[Route('/admin/new_project', name: 'new_project')]
     public function newProject(EntityManagerInterface $em, Request $request): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         $form = $this->createForm(NewProjectType::class);
         $form->handleRequest($request);
@@ -54,6 +55,7 @@ class AdminController extends AbstractController
     #[Route('/admin/projects', name: 'projects')]
     public function projects(ProjectsRepository $projects): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         $projects = $projects->findBy(['deleted' => '0']);
 
@@ -66,6 +68,7 @@ class AdminController extends AbstractController
     #[Route('/admin/projects/deleted', name: 'deleted_projects')]
     public function deletedProjects(ProjectsRepository $projects): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         $projects = $projects->findBy(['deleted' => '1']);
 
@@ -78,6 +81,8 @@ class AdminController extends AbstractController
     #[Route('/admin/projects/recover/{id}', name: 'recover')]
     public function recover($id, ProjectsRepository $projects): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
         $projects = $projects->find($id);
         $projects->setDeleted(0);
         $this->em->flush();
@@ -88,6 +93,8 @@ class AdminController extends AbstractController
     #[Route('/admin/projects/delete/{id}', name: 'delete')]
     public function delete($id, ProjectsRepository $projects): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
         $projects = $projects->find($id);
         $projects->setDeleted(1);
         $this->em->flush();

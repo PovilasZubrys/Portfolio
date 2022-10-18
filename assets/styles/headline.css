@@ -1,0 +1,14 @@
+.headline {
+    border-bottom: solid 3px #E31B6D;
+    margin-bottom: 50px;
+}
+.headline > h1 {
+    margin-bottom: 0px;
+}
+.headline > h2 {
+    color: white;
+    margin-bottom: 0px;
+}
+.footer .headline {
+    margin-bottom: 5px;
+}
