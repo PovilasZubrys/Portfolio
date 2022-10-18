@@ -1,6 +1,10 @@
+.form {
+    display: flex;
+    justify-content: center;
+}
 form {
-    width: 50%;
-    margin: auto;
+    width: 70%;
+    transition: 0.5s;
 }
 .input {
     width: 100%;
@@ -26,13 +30,8 @@ form {
 .antispam {
     display: none;
 }
-@media (max-width: 990px) {
-    form {
-        width: 60%;
-    }
-}
 
-@media (max-width: 990px) {
+@media (max-width: 768px) {
     form {
         width: 100%;
     }

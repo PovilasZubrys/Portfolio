@@ -22,10 +22,21 @@
     align-items: center;
     gap: 30px;
 }
+.row {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.container {
+    max-width: 1vm;
+}
 .right,
 .left {
     display: flex;
     flex-direction: column;
+    gap: 0;
+}
+.right {
     gap: 30px;
 }
 .socials {
@@ -35,9 +46,13 @@
     font-size: 30px;
     line-height: 30px;
 }
-.about a {
-    --bs-link-color: black;
-    --bs-link-hover-color: #04C2C9;
+main > div {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+a {
+    color: black;
     text-decoration: none;
     transition: 0.5s;
     padding: 5px;
@@ -45,10 +60,13 @@
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
+        /*transition: 0.5s;*/
         gap: 15px;
     }
-    .left {
+    .left,
+    .right {
         gap: 15px;
+        transition: 0.5s;
     }
     .socials {
         width: 100%;

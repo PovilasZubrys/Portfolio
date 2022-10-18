@@ -1,35 +1,67 @@
+footer {
+    background-color: #1B242F;
+    min-width: 100%;
+}
+.footer .row {
+    position: relative;
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    justify-content: center;
+}
 .footer {
     padding: 10px 0;
-    background-color: #1B242F;
 }
 .footer .headline {
     margin-bottom: 5px;
 }
 .footer a {
-    --bs-link-color: white;
-    --bs-link-hover-color: #04C2C9;
+    color: white;
     text-decoration: none;
     transition: 0.5s;
+    padding: 1px;
 }
-svg {
+a:hover {
+    color: #04C2C9;
+}
+.right svg {
     margin-right: 2px;
 }
-.footer .hero {
-    width: 100%;
-    align-items: normal;
-}
-.right,
-.left {
+.footer .right,
+.footer .left {
     width: 50%;
     gap: 0;
 }
+.back-to-top {
+    position: absolute;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    background-color: #04C2C9;
+    border-radius: 15px;
+    transition: 0.5s;
+    right: -25px;
+    top: -25px;
+    cursor: pointer;
+}
+.back-to-top:hover {
+    scale: 1.4;
+}
+.back-to-top svg {
+    color: white;
+}
 @media (max-width: 768px) {
-    .hero {
+    .back-to-top {
+        right: 25px;
+    }
+    .row {
         flex-direction: column;
         gap: 0px;
     }
-    .right,
-    .left {
+    .footer .right,
+    .footer .left {
         gap: 0px;
         width: 100%
     }
