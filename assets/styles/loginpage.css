@@ -1,0 +1,21 @@
+.login .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+.checkbox {
+    display: flex;
+}
+.checkbox > input{
+    margin-right: 1px;
+    align-items: center;
+}
+.line {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.cont {
+    max-width: 1vm;
+}

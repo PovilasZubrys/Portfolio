@@ -53,9 +53,9 @@
         </div>
 
         <!-- Contact form -->
-        <div class="container contact-form" id="contact">
+        <div class="container" id="contact">
             <div class="row">
-                <div class="col-12 headline">
+                <div class="headline">
                     <h1>Contact me through email</h1>
                 </div>
                 <div class="form">
@@ -64,6 +64,19 @@
                         <input class="textarea" placeholder="Name" name="name" name="name" type="text" required>
                         <textarea class="textarea" placeholder="Message" name="message" name="message" cols="30" rows="10" required></textarea>
                         <p class="antispam">Leave this empty: <input type="text" name="url" /></p>
+
+                        {# Flash messages #}
+                        {% for message in app.flashes('notice') %}
+                            <div class="alert alert-success" role="alert">
+                                <p>{{ message }}</p>
+                            </div>
+                        {% endfor %}
+                        {% for message in app.flashes('warning') %}
+                        <div class="alert alert-warning">
+                            {{ message }}</p>
+                        </div>
+                        {% endfor %}
+
                         <button class="submit-button" type="submit">Send!</button>
                     </form>
                 </div>

@@ -3,17 +3,6 @@
     margin: auto;
     clip-path: circle();
 }
-.headline {
-    border-bottom: solid 3px #E31B6D;
-    margin-bottom: 50px;
-}
-.headline > h1 {
-    margin-bottom: 0px;
-}
-.headline > h2 {
-    color: white;
-    margin-bottom: 0px;
-}
 .projects {
     background-color: #F5F5F5;
 }
@@ -21,14 +10,6 @@
     display: flex;
     align-items: center;
     gap: 30px;
-}
-.row {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0 10px;
-}
-.container {
-    max-width: 1vm;
 }
 .right,
 .left {

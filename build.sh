@@ -11,3 +11,5 @@ echo -e "${CYAN}Updating composer${ENDCOLOR}"
 #composer update
 echo -e "${CYAN}Pushing new migrations to database${ENDCOLOR}"
 php bin/console doctrine:migrations:migrate --no-interaction
+echo -e "${CYAN}Clearing cache${ENDCOLOR}"
+php bin/console cache:clear --env=prod

@@ -25,6 +25,7 @@ class AdminController extends AbstractController
     public function index(): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
         return $this->render('admin/index.html.twig', [
             'controller' => 'admin',
         ]);
@@ -33,6 +34,8 @@ class AdminController extends AbstractController
     #[Route('/admin/new_project', name: 'new_project')]
     public function newProject(EntityManagerInterface $em, Request $request): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
         $form = $this->createForm(NewProjectType::class);
         $form->handleRequest($request);
 
@@ -52,6 +55,8 @@ class AdminController extends AbstractController
     #[Route('/admin/projects', name: 'projects')]
     public function projects(ProjectsRepository $projects): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
         $projects = $projects->findBy(['deleted' => '0']);
 
         return $this->render('admin/projects.html.twig', [
@@ -63,6 +68,8 @@ class AdminController extends AbstractController
     #[Route('/admin/projects/deleted', name: 'deleted_projects')]
     public function deletedProjects(ProjectsRepository $projects): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
         $projects = $projects->findBy(['deleted' => '1']);
 
         return $this->render('admin/deletedProjects.html.twig', [
@@ -75,6 +82,7 @@ class AdminController extends AbstractController
     public function recover($id, ProjectsRepository $projects): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
         $projects = $projects->find($id);
         $projects->setDeleted(0);
         $this->em->flush();
@@ -86,6 +94,7 @@ class AdminController extends AbstractController
     public function delete($id, ProjectsRepository $projects): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
         $projects = $projects->find($id);
         $projects->setDeleted(1);
         $this->em->flush();

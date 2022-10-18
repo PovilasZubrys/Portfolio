@@ -18,6 +18,15 @@
       "css": [
         "/build/homepage.css"
       ]
+    },
+    "login": {
+      "js": [
+        "/build/runtime.js",
+        "/build/login.js"
+      ],
+      "css": [
+        "/build/login.css"
+      ]
     }
   }
 }
