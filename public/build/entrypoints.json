@@ -3,12 +3,20 @@
     "app": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_symfony_stimulus-bri-5d0350.js",
+        "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js.js",
         "/build/app.js"
       ],
       "css": [
-        "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_symfony_stimulus-bri-5d0350.css",
         "/build/app.css"
+      ]
+    },
+    "homepage": {
+      "js": [
+        "/build/runtime.js",
+        "/build/homepage.js"
+      ],
+      "css": [
+        "/build/homepage.css"
       ]
     }
   }
