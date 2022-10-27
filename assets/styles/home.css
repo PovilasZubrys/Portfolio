@@ -49,7 +49,6 @@ a {
     gap: 30px;
 }
 .contact-box {
-    margin-top: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,13 +68,17 @@ a {
     transform: scale(1.2);
     box-shadow: 5px 5px 60px;
 }
-.contact-title {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-}
 @media (max-width: 768px) {
+    .contact-section .contacts {
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .contact-box {
+        width: 70%;
+    }
     .hero {
         flex-direction: column;
         /*transition: 0.5s;*/
@@ -87,6 +90,11 @@ a {
         transition: 0.5s;
     }
     .socials {
+        width: 100%;
+    }
+}
+@media (max-width: 450px) {
+    .contact-box {
         width: 100%;
     }
 }
