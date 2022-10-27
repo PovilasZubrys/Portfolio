@@ -53,32 +53,28 @@
         </div>
 
         <!-- Contact form -->
-        <div class="container" id="contact">
+        <div class="container contact-section" id="contact">
             <div class="row">
                 <div class="headline">
-                    <h1>Contact me through email</h1>
+                    <h1>How to contact me?</h1>
                 </div>
-                <div class="form">
-                    <form name="contact" method="POST">
-                        <input class="input" placeholder="Email" id="email" name="email" type="text" required>
-                        <input class="textarea" placeholder="Name" name="name" name="name" type="text" required>
-                        <textarea class="textarea" placeholder="Message" name="message" name="message" cols="30" rows="10" required></textarea>
-                        <p class="antispam">Leave this empty: <input type="text" name="url" /></p>
-
-                        {# Flash messages #}
-                        {% for message in app.flashes('notice') %}
-                            <div class="alert alert-success" role="alert">
-                                <p>{{ message }}</p>
-                            </div>
-                        {% endfor %}
-                        {% for message in app.flashes('warning') %}
-                        <div class="alert alert-warning">
-                            {{ message }}</p>
-                        </div>
-                        {% endfor %}
-
-                        <button class="submit-button" type="submit">Send!</button>
-                    </form>
+                <span class="contact-title">
+                    <h2>You can reach me through my LinkedIn, Instagram or email!</h2>
+                    <p>Whichever is more comfortable for you 😏</p>
+                </span>
+                <div class="contacts">
+                    <a class="contact-box"  id="linkedin" href="https://www.linkedin.com/in/povilas-zubrys-3315161b9/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                        <p>LinkedIn</p>
+                    </a>
+                    <a class="contact-box" id="instagram" href="https://www.instagram.com/povilaszubrys/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        <p>Instagram</p>
+                    </a>
+                    <a class="contact-box" href="mailto:povilaszubrys@gmail.com" id="mail">
+                        <i class="fa-solid fa-envelope"></i>
+                        <p>povilaszubrys@gmail.com</p>
+                    </a>
                 </div>
             </div>
         </div>
