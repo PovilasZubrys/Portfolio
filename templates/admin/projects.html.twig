@@ -14,9 +14,14 @@
     <div class="container">
         <div class="row">
             <div class="headline">
-                <h1>Currently added projects</h1>
+                <h1>Currently active projects</h1>
             </div>
-
+            <div class="table-nav">
+                <div class="buttons">
+                    <a title="Add new project" href="/admin/projects/new_project"><i class="fa-solid fa-plus"></i></a>
+                    <a title="Deleted projects" href="/admin/projects/deleted"><i class="fa-solid fa-clock-rotate-left"></i></a>
+                </div>
+            </div>
             <ul class="responsive-table">
                 <li class="table-header">
                     <div class="col col-1">Id</div>
@@ -30,10 +35,10 @@
                     <div class="col col-2" data-label="Title">{{ project.title }}</div>
                     <div class="col col-3" data-label="Url">{{ project.url }}</div>
                     <div class="col col-4" data-label="Actions">
-                        <div class="buttons">
-                            <a class="button" href="/admin/projects/view/{{ project.id }}"><i class="fa-solid fa-eye"></i></a>
-                            <a href="/admin/projects/edit/{{ project.id }}"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <a href="/admin/projects/delete/{{ project.id }}"><i class="fa-solid fa-trash"></i></a>
+                        <div class="actions">
+                            <a title="View project" href="/admin/projects/view/{{ project.id }}"><i class="fa-solid fa-eye"></i></a>
+                            <a title="Edit project" href="/admin/projects/edit/{{ project.id }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a title="Delete project" href="/admin/projects/delete/{{ project.id }}"><i class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
                 </li>

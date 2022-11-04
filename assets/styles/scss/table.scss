@@ -5,26 +5,27 @@
     padding-left: 10px;
     padding-right: 10px;
 }
-.buttons {
+.actions {
     display: flex;
     gap: 10px;
     justify-content: center;
 }
-.buttons a {
+.actions a {
     font-size: 17px;
     transition: 0.2s;
     text-decoration: none;
 }
-.buttons a:hover {
+.actions a:hover {
     transform: scale(1.3);
 }
-.buttons .fa-eye {
+.actions .fa-eye,
+.actions .fa-trash-arrow-up {
     color: green;
 }
-.buttons .fa-pen-to-square {
+.actions .fa-pen-to-square {
     color: dodgerblue;
 }
-.buttons .fa-trash {
+.actions .fa-trash {
     color: darkred;
 }
 h2 {

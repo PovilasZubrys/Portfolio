@@ -31,7 +31,7 @@ class AdminController extends AbstractController
         ]);
     }
 
-    #[Route('/admin/new_project', name: 'new_project')]
+    #[Route('/admin/projects/new_project', name: 'new_project')]
     public function newProject(EntityManagerInterface $em, Request $request): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
@@ -87,7 +87,7 @@ class AdminController extends AbstractController
         $projects->setDeleted(0);
         $this->em->flush();
 
-        return $this->redirectToRoute('recover');
+        return $this->redirectToRoute('deleted_projects');
     }
 
     #[Route('/admin/projects/delete/{id}', name: 'delete')]
