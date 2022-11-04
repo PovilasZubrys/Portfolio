@@ -36,6 +36,15 @@
       "css": [
         "/build/controlpanel.css"
       ]
+    },
+    "projects": {
+      "js": [
+        "/build/runtime.js",
+        "/build/projects.js"
+      ],
+      "css": [
+        "/build/projects.css"
+      ]
     }
   }
 }

@@ -1,41 +1,44 @@
 {% extends './admin/index.html.twig' %}
 
 {% block title %}Projects list{% endblock %}
-
 {% block body %}
+    {% block projects_css %}
+        {{ encore_entry_link_tags('projects') }}
+    {% endblock %}
+
+    {% block projects_js %}
+        {{ encore_entry_script_tags('projects') }}
+    {% endblock %}
 <main>
+
     <div class="container">
         <div class="row">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">ID</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Url</th>
-                        <th scope="col">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {% set count = 1 %}
+            <div class="headline">
+                <h1>Currently added projects</h1>
+            </div>
+
+            <ul class="responsive-table">
+                <li class="table-header">
+                    <div class="col col-1">Id</div>
+                    <div class="col col-2">Title</div>
+                    <div class="col col-3">Url</div>
+                    <div class="col col-4">Actions</div>
+                </li>
                 {% for project in projects %}
-                    <tr>
-                        <th scope="row">{{ count }}</th>
-                        <td>{{ project.id }}</td>
-                        <td>{{ project.title }}</td>
-                        <td>{{ project.url }}</td>
-                        <td>
-                            <div class="btn-group">
-                                <a href="/admin/projects/view/{{ project.id }}" class="btn btn-primary">VIEW</a>
-                                <a href="" class="btn btn-success">EDIT</a>
-                                <a href="/admin/projects/delete/{{ project.id }}" class="btn btn-danger">DELETE</a>
-                            </div>
-                        </td>
-                    </tr>
-                    {% set count = count + 1 %}
+                <li class="table-row">
+                    <div class="col col-1" data-label="Id">{{ project.id }}</div>
+                    <div class="col col-2" data-label="Title">{{ project.title }}</div>
+                    <div class="col col-3" data-label="Url">{{ project.url }}</div>
+                    <div class="col col-4" data-label="Actions">
+                        <div class="buttons">
+                            <a class="button" href="/admin/projects/view/{{ project.id }}"><i class="fa-solid fa-eye"></i></a>
+                            <a href="/admin/projects/edit/{{ project.id }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="/admin/projects/delete/{{ project.id }}"><i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    </div>
+                </li>
                 {% endfor %}
-                </tbody>
-            </table>
+            </ul>
         </div>
     </div>
 </main>

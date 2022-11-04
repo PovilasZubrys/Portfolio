@@ -1,1 +1,1 @@
-import '/assets/styles/scss/controlpanel.scss';
+import '../styles/scss/controlpanel.scss';
