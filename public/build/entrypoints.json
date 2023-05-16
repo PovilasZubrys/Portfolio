@@ -27,6 +27,24 @@
       "css": [
         "/build/login.css"
       ]
+    },
+    "controlpanel": {
+      "js": [
+        "/build/runtime.js",
+        "/build/controlpanel.js"
+      ],
+      "css": [
+        "/build/controlpanel.css"
+      ]
+    },
+    "projects": {
+      "js": [
+        "/build/runtime.js",
+        "/build/projects.js"
+      ],
+      "css": [
+        "/build/projects.css"
+      ]
     }
   }
 }
