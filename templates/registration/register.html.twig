@@ -3,15 +3,39 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+    {% block login_css %}
+        {{ encore_entry_link_tags('login') }}
+    {% endblock %}
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+    {% block login_js %}
+        {{ encore_entry_script_tags('login') }}
+    {% endblock %}
+    <main>
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+        <div class="cont login">
+            <div class="line">
+                <div class="headline">
+                    <h1>Register</h1>
+                </div>
+                <div class="form">
+                    <form method="post">
+                        {% for message in app.session.flashBag.get('error') %}
+                            <div class="alert alert-warning">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+
+                        <input type="email" class="input" placeholder="Email" name="email" id="inputEmail" autocomplete="email" required autofocus>
+                        <input type="password" class="input" placeholder="Password" name="password" id="inputPassword" required>
+                        <input type="password" class="input" placeholder="Repeat password" name="repeat password" id="repeatInputPassword" required>
+
+                        <button class="submit-button" type="submit">
+                            Sign in
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
 {% endblock %}
