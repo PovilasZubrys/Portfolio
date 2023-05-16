@@ -12,8 +12,3 @@ import './styles/app.css';
 // Font-Awesome
 // require('@fortawesome/fontawesome-free/css/all.min.css');
 require('@fortawesome/fontawesome-free/js/all.js');
-
-// // Importing bootstrap.
-// import 'bootstrap';
-// // start the Stimulus application
-// import './bootstrap';

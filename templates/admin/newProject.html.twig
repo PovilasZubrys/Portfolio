@@ -1,15 +1,23 @@
-{% extends 'base.html.twig' %}
+{% extends './admin/index.html.twig' %}
 
 {% block title %}Add New Project{% endblock %}
-
 {% block body %}
+    {% block controlpanel_css %}
+        {{ encore_entry_link_tags('controlpanel') }}
+    {% endblock %}
+    {% block controlpanel_js %}
+        {{ encore_entry_script_tags('controlpanel') }}
+    {% endblock %}
 <main>
     <div class="container">
         <div class="row">
+            <div class="headline">
+                <h1>Add new project!</h1>
+            </div>
             <div class="form">
                 {{ form_start(form) }}
                 {{ form_widget(form) }}
-                <button class="submit-button" type="submit">Submit!</button>
+                <button class="submit-button" type="submit">Add</button>
                 {{form_end(form)}}
             </div>
         </div>
