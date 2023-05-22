@@ -101,4 +101,29 @@ class AdminController extends AbstractController
 
         return $this->redirectToRoute('projects');
     }
+
+    #[Route('/admin/projects/edit/{id}', name: 'edit')]
+    public function edit($id, ProjectsRepository $projects, Request $request): Response
+    {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
+        $result = $projects->findOneBy([
+            'id' => $id
+        ]);
+
+        $form = $this->createForm(NewProjectType::class, $result);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            $this->em->persist($data);
+            $this->em->flush();
+
+            return $this->redirectToRoute('projects');
+        }
+
+        return $this->render('admin/editProject.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
 }
