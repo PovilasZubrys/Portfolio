@@ -38,6 +38,7 @@
                 <div class="col-12 headline">
                     <h1>My project gallery</h1>
                 </div>
+                {% if projects is empty %}
                 <div class="col-12" style="text-align: center">
                     <div>
                         <img class="image" src="{{ asset('build/images/notfound.d87bc71e.webp') }}" alt="">
@@ -49,6 +50,22 @@
                         But do not worry my friend! I am working on populating this empty void of space!
                     </p>
                 </div>
+                {% elseif projects is not empty %}
+                <div class="projectCards">
+                    {% for project in projects %}
+                            <div class="projectCard">
+                                <h3>{{ project.title }} Position {{ project.position }}</h3>
+                                <p>{{ project.description }}</p>
+                                <a href="{{ project.url }}" target="_blank">Click here to see live project</a>
+                            </div>
+                    {% endfor %}
+                </div>
+                <div class="projectsButton">
+                    <a class="submit-button linkToGit" href="https://github.com/PovilasZubrys" target="_blank">
+                        Click here to see my other projects!
+                    </a>
+                </div>
+                {% endif %}
             </div>
         </div>
 

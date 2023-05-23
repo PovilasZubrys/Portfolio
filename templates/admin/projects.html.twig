@@ -25,6 +25,7 @@
             <ul class="responsive-table">
                 <li class="table-header">
                     <div class="col col-1">Id</div>
+                    <div class="col col-1">Pos</div>
                     <div class="col col-2">Title</div>
                     <div class="col col-3">Url</div>
                     <div class="col col-4">Actions</div>
@@ -32,6 +33,7 @@
                 {% for project in projects %}
                 <li class="table-row">
                     <div class="col col-1" data-label="Id">{{ project.id }}</div>
+                    <div class="col col-1" data-label="Position">{{ project.position }}</div>
                     <div class="col col-2" data-label="Title">{{ project.title }}</div>
                     <div class="col col-3" data-label="Url">{{ project.url }}</div>
                     <div class="col col-4" data-label="Actions">

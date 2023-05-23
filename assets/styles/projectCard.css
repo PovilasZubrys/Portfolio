@@ -1,0 +1,14 @@
+.projectCard {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+.projectCard > p {
+    margin-top: 5px;
+    font-size: 15px;
+}
+.projectCard > a {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+}

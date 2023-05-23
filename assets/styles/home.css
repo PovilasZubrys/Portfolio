@@ -6,6 +6,25 @@
 .projects {
     background-color: #F5F5F5;
 }
+/*.projectCards {*/
+/*    display: flex;*/
+/*    width: 100%;*/
+/*    justify-content: center;*/
+/*}*/
+.projectsButton {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.linkToGit {
+    width: 60%;
+}
+.linkToGit:hover {
+    width: 60%;
+    color: white;
+}
 .hero {
     display: flex;
     align-items: center;

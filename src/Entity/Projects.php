@@ -29,6 +29,9 @@ class Projects
     #[ORM\Column]
     private ?int $deleted = 0;
 
+    #[ORM\Column]
+    private ?int $position = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +93,18 @@ class Projects
     public function setDeleted(int $deleted): self
     {
         $this->deleted = $deleted;
+
+        return $this;
+    }
+
+    public function getPosition(): ?int
+    {
+        return $this->position;
+    }
+
+    public function setPosition(int $position): self
+    {
+        $this->position = $position;
 
         return $this;
     }
