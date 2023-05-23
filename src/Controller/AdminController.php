@@ -155,4 +155,14 @@ class AdminController extends AbstractController
             'form' => $form->createView()
         ]);
     }
+
+    #[Route('/admin/update', name: 'update')]
+    public function updateWebsite()
+    {
+        chdir('..');
+        shell_exec('sh build.sh');
+        chdir('public');
+
+        return $this->redirectToRoute('admin');
+    }
 }
