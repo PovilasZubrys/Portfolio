@@ -3,8 +3,15 @@
 {% block title %}Admin panel{% endblock %}
 
 {% block body %}
+    {% block homepage_css %}
+        {{ encore_entry_link_tags('controlpanel') }}
+    {% endblock %}
 
-    <div class="container" id="about">
+    {% block homepage_js %}
+        {{ encore_entry_script_tags('controlpanel') }}
+    {% endblock %}
+
+    <div class="container" id="webSettings">
         <div class="row">
             <div class="col-12 headline">
                 <h1>Web settings</h1>
