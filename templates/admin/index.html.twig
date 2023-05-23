@@ -19,6 +19,9 @@
             <div>
                 <h2>Update website</h2>
                 <a href="/admin/update">Update</a>
+                {% if releaseLog is defined %}
+                    <p>{{ releaseLog }}</p>
+                {% endif %}
             </div>
         </div>
     </div>

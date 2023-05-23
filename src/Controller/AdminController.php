@@ -159,10 +159,14 @@ class AdminController extends AbstractController
     #[Route('/admin/update', name: 'update')]
     public function updateWebsite()
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
         chdir('..');
-        shell_exec('sh build.sh');
+        $output = shell_exec('sh build.sh');
         chdir('public');
 
-        return $this->redirectToRoute('admin');
+        return $this->render('admin/index.html.twig', [
+            'releaseLog' => $output
+        ]);
     }
 }
